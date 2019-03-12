@@ -20,7 +20,7 @@ BLOG_AUTHOR = "Canyi Chen"  # (translatable)
 BLOG_TITLE = "Canyi Chen"  # (translatable)
 # This is the main URL for your site. It will be used
 # in a prominent link. Don't forget the protocol (http/https)!
-SITE_URL = "http://chencanyi.github.io/"
+SITE_URL = "http://ccybnumath.github.io/"
 # This is the URL where Nikola's output will be deployed.
 # If not set, defaults to SITE_URL
 # BASE_URL = "http://chencanyi.github.io/"
@@ -641,7 +641,7 @@ GITHUB_REMOTE_NAME = 'origin'
 
 # Whether or not github_deploy should commit to the source branch automatically
 # before deploying.
-GITHUB_COMMIT_SOURCE = False
+GITHUB_COMMIT_SOURCE = True 
 
 # Where the output site should be located
 # If you don't use an absolute path, it will be considered as relative
