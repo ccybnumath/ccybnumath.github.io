@@ -49,6 +49,8 @@ To deploy the content on master, run:
 ```bash
 nikola github_deploy
 ```
+## Math
+For the support of `$`, check this post [](https://getnikola.com/handbook.html#math)
 ## References
 * [Personal Website with Jupyter Support using Nikola and GitHub Page](https://jiaweizhuang.github.io/blog/nikola-guide/)
 * [Getting Started](https://getnikola.com/getting-started.html)
