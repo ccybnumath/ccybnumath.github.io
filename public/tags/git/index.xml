@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>git on Canyi Chen</title>
+    <link>/tags/git/</link>
+    <description>Recent content in git on Canyi Chen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 06 Aug 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Git basics</title>
+      <link>/post/git-basics/</link>
+      <pubDate>Tue, 06 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/git-basics/</guid>
+      <description>A great and easy understanding introduction to git. Here are just my notes.
+ force pushing
+git push -u origin master -f Create new branch
+git checkout -b src switch branch
+git checkout src Branch src has already existed.
+ show all branches
+git branch show commitment history
+git log git log --graph Display with less
+ Roll back
+# roll back one step git reset --hard HEAD~1 git add .</description>
+    </item>
+    
+  </channel>
+</rss>

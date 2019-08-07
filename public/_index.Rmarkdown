@@ -1,0 +1,7 @@
+---
+title: Home
+disable_comments: true
+disable_title: true
+---
+# Home
+## Posts
