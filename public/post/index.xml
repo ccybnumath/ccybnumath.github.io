@@ -6,7 +6,7 @@
     <description>Recent content in Posts on Canyi Chen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 06 Aug 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 07 Aug 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
@@ -30,6 +30,22 @@ We&amp;rsquo;ll start with creating a new site with a very basic template.</desc
       <description>Move static content to static Jekyll has a rule that any directory not starting with _ will be copied as-is to the _site output. Hugo keeps all static content under static. You should therefore move it all there. With Jekyll, something that looked like
 ▾ &amp;lt;root&amp;gt;/ ▾ images/ logo.png  should become
 ▾ &amp;lt;root&amp;gt;/ ▾ static/ ▾ images/ logo.png  Additionally, you&amp;rsquo;ll want any files that should reside at the root (such as CNAME) to be moved to static.</description>
+    </item>
+    
+    <item>
+      <title>Install Hugo &amp; Theme Midnight</title>
+      <link>/post/install-hugo-theme-midnight-https-bluestnight-com-guides-midnight-getting-started/</link>
+      <pubDate>Wed, 07 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/install-hugo-theme-midnight-https-bluestnight-com-guides-midnight-getting-started/</guid>
+      <description> Mainly follow quick-start.
+ Installment
+sudo apt-get update sudo apt-get install hugo hugo version # check version hugo new site www.chencanyi.cn cd www.chencanyi.cn git init git submodule add https://gitlab.com/BluestNight/Midnight.git themes/Midnight cp themes/Midnight/exampleS ite/config.toml . -f Add some content(Optional)
+hugo new posts/my-first-post.md Start server
+hugo server -D References https://bluestnight.com/guides/midnight/getting-started/
+ https://themes.gohugo.io/theme/Midnight/
+ https://gohugo.io/getting-started/quick-start/
+  </description>
     </item>
     
     <item>

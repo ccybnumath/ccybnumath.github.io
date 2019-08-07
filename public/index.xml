@@ -5,8 +5,39 @@
     <description>Recent content in Home on Canyi Chen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 06 Aug 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 07 Aug 2019 00:00:00 +0000</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Install Hugo &amp; Theme Midnight</title>
+      <link>/post/install-hugo-theme-midnight-https-bluestnight-com-guides-midnight-getting-started/</link>
+      <pubDate>Wed, 07 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/install-hugo-theme-midnight-https-bluestnight-com-guides-midnight-getting-started/</guid>
+      <description> Mainly follow quick-start.
+ Installment
+sudo apt-get update sudo apt-get install hugo hugo version # check version hugo new site www.chencanyi.cn cd www.chencanyi.cn git init git submodule add https://gitlab.com/BluestNight/Midnight.git themes/Midnight cp themes/Midnight/exampleS ite/config.toml . -f Add some content(Optional)
+hugo new posts/my-first-post.md Start server
+hugo server -D References https://bluestnight.com/guides/midnight/getting-started/
+ https://themes.gohugo.io/theme/Midnight/
+ https://gohugo.io/getting-started/quick-start/
+  </description>
+    </item>
+    
+    
+    
+    <item>
+      <title>Prefix bash code with $ using `awk`</title>
+      <link>/post/prefix-bash-code-with-using-awk/</link>
+      <pubDate>Tue, 06 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/prefix-bash-code-with-using-awk/</guid>
+      <description> Problem We plan to prefix $ before bash code block.
+Solution Use awk in bash line to progress strings.
+# .zshrc alias bashcode=Bashcode function Bashcode(){ history | awk &amp;#39;{print &amp;#34;$ &amp;#34; $2}&amp;#39; } References  http://www.ruanyifeng.com/blog/2018/11/awk.html https://gregable.com/2010/09/why-you-should-know-just-little-awk.html  </description>
+    </item>
+    
     
     
     <item>
@@ -37,19 +68,6 @@ git log git log --graph Display with less
       <guid>/post/blog-integrated-with-blogdown-hugo-rstudio-and-github-seamlessly/</guid>
       <description> ##
 References </description>
-    </item>
-    
-    
-    
-    <item>
-      <title>Prefix bash code with $ using `awk`</title>
-      <link>/post/prefix-bash-code-with-using-awk/</link>
-      <pubDate>Tue, 06 Aug 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/prefix-bash-code-with-using-awk/</guid>
-      <description> Problem We plan to prefix $ before bash code block.
-Solution Use awk in bash line to progress strings.
-# .zshrc alias bashcode=Bashcode function Bashcode(){ history | awk &amp;#39;{print &amp;#34;$ &amp;#34; $2}&amp;#39; } References  http://www.ruanyifeng.com/blog/2018/11/awk.html https://gregable.com/2010/09/why-you-should-know-just-little-awk.html  </description>
     </item>
     
     
