@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>awk on Canyi Chen</title>
+    <link>/tags/awk/</link>
+    <description>Recent content in awk on Canyi Chen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 06 Aug 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/awk/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Prefix bash code with $ using `awk`</title>
+      <link>/post/prefix-bash-code-with-using-awk/</link>
+      <pubDate>Tue, 06 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/prefix-bash-code-with-using-awk/</guid>
+      <description> Problem We plan to prefix $ before bash code block.
+Solution Use awk in bash line to progress strings.
+# .zshrc alias bashcode=Bashcode function Bashcode(){ history | awk &amp;#39;{print &amp;#34;$ &amp;#34; $2}&amp;#39; } References  http://www.ruanyifeng.com/blog/2018/11/awk.html https://gregable.com/2010/09/why-you-should-know-just-little-awk.html  </description>
+    </item>
+    
+  </channel>
+</rss>

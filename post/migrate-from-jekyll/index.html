@@ -1,0 +1,545 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Migrate to Hugo from Jekyll</title><meta name="description" itemprop="description" content="Move static content to static Jekyll has a rule that any directory not starting with _ will be copied as-is to the _site output. Hugo keeps all static content under static. You should therefore move it all there. With Jekyll, something that looked like ▾ &amp;lt;root&amp;gt;/ ▾ images/ logo.png  should become ▾ &amp;lt;root&amp;gt;/ ▾ static/ ▾ images/ logo.png  Additionally, you&amp;rsquo;ll want any files that should reside at the root (such as CNAME) to be moved to static." id="desc"><meta name="generator" content="Hugo 0.56.3" /><link rel="canonical" href="/post/migrate-from-jekyll/">
+        
+
+<link rel="dns-prefetch" href="https://use.fontawesome.com/" />
+<link rel="preconnect" href="https://use.fontawesome.com/" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+
+
+
+<link rel="stylesheet" href="/css/foundation.min.css" integrity="sha512-Rd0Ui3eNZsRTe4UNVA+6WeU5VwpGAqqd/+xTbWI/T/OmcYqnrNWfJC02AjPbt5TuDGA3l4SFJdTH91QPP3vAFg==">
+  <link rel="stylesheet" href="/css/dark.min.css" integrity="sha512-gQpDgduBgmlAz6RR6+MVgbcrPEu+langkA9ngZtIrAjV8Hwcno+rUvaRjfUrzceGtO+gpoCAm4fLeMuAd/5v7Q=="><link rel="stylesheet" href="/styles.css" >
+    <link rel="stylesheet" href="/css/reset.min.css" integrity="sha512-xwmF/g6mhf+NqX9hnHhGV+cKVithh9ncEOreDW6jZXIqMiqsX5sxvVZXYuzz+8jLI7+wPFr/2/sg2x8Pp0a1VA=="><link rel="stylesheet" href="/css/fonts.min.css" integrity="sha512-xROhFE8XAZAs3OvW3/LUg6jCH7LgsxPMimBO/cpzYV7EgJgY5hbDX9rHqaOG5VrAv52NMXFuHiQ4xqnSgFvmqQ=="><link rel="stylesheet" href="/css/classes.min.css" integrity="sha512-VtHTX2MGmhT+/gSeNEwz2TD+OEFpz9G9AUjHc9mAjEgneeX2RiJphzfxqHrU+7afnuHkTkwMtY4hP5XAJCZ8eA=="><link rel="stylesheet" href="/css/pagination.min.css" integrity="sha512-exBmcmBqVqp5QRaF99l0MQPpD6X4/7RMJa9KY4pv/SP9R31qyqwuAIcPXZPm5jn7EMDVdviT45APg0RBfBA3Ow=="><link rel="stylesheet" href="/css/page.min.css" integrity="sha512-Eqq5awgR8Hau+25mfXATwps47CVesfD4jrw/QozL3eib52HmmlFnvxsERXuGCVQH1S1FSaQD/oycWN/WyGE5Aw=="><link rel="stylesheet" href="/css/widgets.min.css" integrity="sha512-KkbwfnV4akqRv+GVWIAa0UazaiDzkMev+Iq6AkHnzvOhQnb9tJnZwHySGGBjfwH3LOmMuaXl7an5uR36EuftaQ==">
+    <link rel="stylesheet" href="/css/single.min.css" integrity="sha512-Q1Zy+J4r0j/8Mjf7DVoh6X/Q1gWZqmvMf5IX7vxV7k97/NLY5novAjHRMReD9WWrDOq54t3sHsR7i8HwXlumlg==">
+
+
+
+    
+    
+        <link rel="stylesheet" href="/css/forms.min.css" integrity="sha512-HFLITUp3WlAxFTDsGCwrGbp6HMCuilYVDQcMoKPfp/vVfBZHlIUxf1PjVr7Pbe2HG6PudC3LPj1HrpwU4lCtLw==">
+    
+    
+    
+<link rel="preload" media="print" type="text/css" href="/css/print.min.2e0961e511885e38a09cc9a9ff3de5ce7d7d2186bb9ed98a61f176688d4ef61a.css" integrity="sha256-Lglh5RGIXjignMmp/z3lzn19IYa7ntmKYfF2aI1O9ho=" as="style"><link rel="dns-prefetch" href="https://cdnjs.cloudflare.com/" />
+<link rel="preconnect" href="https://cdnjs.cloudflare.com/" />
+
+<link rel="preload" href="/index.json" as="fetch" />
+
+<link rel="stylesheet" href="/css/widgets/search.min.css" integrity="sha512-7Otnz4Nae1tx47YRSs6kqu108FeNUGViWaATAkZTN2g/kps4bOyu+ukQwTyPMnZBM2U9epLm+YXnArC+I+UMgA==">
+<link rel="stylesheet" href="/css/widgets/taglist.min.css" integrity="sha512-0mtvLycPchph/Kw1OcdI3KmQ5qi8oOdiS35lFD+pNcEPTQ6rmiMAF9dztJkhsuuQsAuXADQCj2gC/O+axKh/Pw==">
+
+    <meta name="theme-color" content="#2073c9">
+    <meta name="apple-mobile-web-app-title" content="Canyi Chen">
+    <meta name="application-name" content="Canyi Chen">
+
+    </head>
+    <body itemscope itemtype="http://schema.org/WebPage">
+        <div class="off-canvas-wrapper">
+            <button id="off-canvas-toggle" type="button" class="button hide-for-medium" aria-label="Open Menu" data-toggle="main-nav-off-canvas">
+                <span class="fas fa-bars"></span>
+            </button>
+            <div class="off-canvas position-left" id="main-nav-off-canvas" data-off-canvas>
+                <nav>
+                    <ul class="vertical menu drilldown" data-drilldown><li itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <a class="main-nav button" tabindex="0" href="/post/" >
+            POSTS
+        </a></li><li itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <a class="main-nav button" tabindex="0" href="/about/" >
+            ABOUT HUGO
+        </a></li><li itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <a class="main-nav button active" tabindex="0" href="/" >
+            TUTORIALS
+        </a><ul class="vertical menu">
+                <li itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <a class="main-nav button" tabindex="0" href="/post/creating-a-new-theme/" >
+            CREATING A NEW THEME
+        </a></li><li itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <a class="main-nav button active" tabindex="0" href="/post/migrate-from-jekyll/" >
+            MIGRATING FROM JEKYLL
+        </a></li>
+            </ul></li></ul>
+                </nav>
+            </div>
+        <div id="site-container" class="grid-container full off-canvas-content">
+                <div class="grid-x full grid-container data-off-canvas-content">
+                    <div id="site-header" class="cell">
+                        <a href="/">
+                            <header class="small-text-center medium-text-left grid-x">
+                                <div id="site-title-container" class="cell shrink grid-y">
+                                    <div id="site-title" class="cell shrink" itemprop="name">Canyi Chen</div>
+                                    <div class="cell shrink" id="site-tagline">Using R&amp;Python</div>
+                                </div>
+                            </header>
+                        </a>
+                        <nav id="main-nav" class="small-hide">
+                          <ul class="dropdown menu" data-dropdown-menu><li itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <a class="main-nav button" tabindex="0" href="/post/" >
+            POSTS
+        </a></li><li itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <a class="main-nav button" tabindex="0" href="/about/" >
+            ABOUT HUGO
+        </a></li><li itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <a class="main-nav button active" tabindex="0" href="/" >
+            TUTORIALS
+        </a><ul class="vertical menu">
+                <li itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <a class="main-nav button" tabindex="0" href="/post/creating-a-new-theme/" >
+            CREATING A NEW THEME
+        </a></li><li itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <a class="main-nav button active" tabindex="0" href="/post/migrate-from-jekyll/" >
+            MIGRATING FROM JEKYLL
+        </a></li>
+            </ul></li></ul>
+                        </nav>
+                        </div>
+                    <div id="main-container" class="cell grid-x grid-padding-x grid-container" role="main" itemprop="mainContentOfPage">
+                        
+                        
+                        
+                        
+                        
+                        
+<main class="cell medium-8" >
+    <article id="post-article" itemscope itemtype="http://schema.org/Article" itemref="desc">
+        <header id="page-header">
+            <h1 itemprop="headline">Migrate to Hugo from Jekyll</h1><p id="post-metadata" class="grid-x grid-padding-x"><span class="cell shrink">
+                        <span class="far fa-clock fa-sm fa-fw" aria-hidden></span>
+                        <strong>Published:</strong>
+                        <time datetime="2014-03-10" content="2014-03-10" itemprop="datePublished">March 10, 2014</time>
+                    </span><span class="cell shrink">
+                        <span class="fas fa-book fa-sm fa-fw" aria-hidden></span>
+                        <strong>Estimated Reading Time:</strong>
+                        ~<span itemprop="timeRequired">4 minutes</span>
+                    </span></p>
+            
+        </header>
+        
+        <div id="post-content"><span itemprop="articleBody">
+
+<h2 id="move-static-content-to-static">Move static content to <code>static</code></h2>
+
+<p>Jekyll has a rule that any directory not starting with <code>_</code> will be copied as-is to the <code>_site</code> output. Hugo keeps all static content under <code>static</code>. You should therefore move it all there.
+With Jekyll, something that looked like</p>
+
+<pre><code>▾ &lt;root&gt;/
+    ▾ images/
+        logo.png
+</code></pre>
+
+<p>should become</p>
+
+<pre><code>▾ &lt;root&gt;/
+    ▾ static/
+        ▾ images/
+            logo.png
+</code></pre>
+
+<p>Additionally, you&rsquo;ll want any files that should reside at the root (such as <code>CNAME</code>) to be moved to <code>static</code>.</p>
+
+<h2 id="create-your-hugo-configuration-file">Create your Hugo configuration file</h2>
+
+<p>Hugo can read your configuration as JSON, YAML or TOML. Hugo supports parameters custom configuration too. Refer to the <a href="/overview/configuration/">Hugo configuration documentation</a> for details.</p>
+
+<h2 id="set-your-configuration-publish-folder-to-site">Set your configuration publish folder to <code>_site</code></h2>
+
+<p>The default is for Jekyll to publish to <code>_site</code> and for Hugo to publish to <code>public</code>. If, like me, you have <a href="http://blog.blindgaenger.net/generate_github_pages_in_a_submodule.html"><code>_site</code> mapped to a git submodule on the <code>gh-pages</code> branch</a>, you&rsquo;ll want to do one of two alternatives:</p>
+
+<ol>
+<li><p>Change your submodule to point to map <code>gh-pages</code> to public instead of <code>_site</code> (recommended).</p>
+
+<pre><code>git submodule deinit _site
+git rm _site
+git submodule add -b gh-pages git@github.com:your-username/your-repo.git public
+</code></pre></li>
+
+<li><p>Or, change the Hugo configuration to use <code>_site</code> instead of <code>public</code>.</p>
+
+<pre><code>{
+    ..
+    &quot;publishdir&quot;: &quot;_site&quot;,
+    ..
+}
+</code></pre></li>
+</ol>
+
+<h2 id="convert-jekyll-templates-to-hugo-templates">Convert Jekyll templates to Hugo templates</h2>
+
+<p>That&rsquo;s the bulk of the work right here. The documentation is your friend. You should refer to <a href="http://jekyllrb.com/docs/templates/">Jekyll&rsquo;s template documentation</a> if you need to refresh your memory on how you built your blog and <a href="/layout/templates/">Hugo&rsquo;s template</a> to learn Hugo&rsquo;s way.</p>
+
+<p>As a single reference data point, converting my templates for <a href="http://heyitsalex.net/">heyitsalex.net</a> took me no more than a few hours.</p>
+
+<h2 id="convert-jekyll-plugins-to-hugo-shortcodes">Convert Jekyll plugins to Hugo shortcodes</h2>
+
+<p>Jekyll has <a href="http://jekyllrb.com/docs/plugins/">plugins</a>; Hugo has <a href="/doc/shortcodes/">shortcodes</a>. It&rsquo;s fairly trivial to do a port.</p>
+
+<h3 id="implementation">Implementation</h3>
+
+<p>As an example, I was using a custom <a href="https://github.com/alexandre-normand/alexandre-normand/blob/74bb12036a71334fdb7dba84e073382fc06908ec/_plugins/image_tag.rb"><code>image_tag</code></a> plugin to generate figures with caption when running Jekyll. As I read about shortcodes, I found Hugo had a nice built-in shortcode that does exactly the same thing.</p>
+
+<p>Jekyll&rsquo;s plugin:</p>
+
+<pre><code>module Jekyll
+  class ImageTag &lt; Liquid::Tag
+    @url = nil
+    @caption = nil
+    @class = nil
+    @link = nil
+    // Patterns
+    IMAGE_URL_WITH_CLASS_AND_CAPTION =
+    IMAGE_URL_WITH_CLASS_AND_CAPTION_AND_LINK = /(\w+)(\s+)((https?:\/\/|\/)(\S+))(\s+)&quot;(.*?)&quot;(\s+)-&gt;((https?:\/\/|\/)(\S+))(\s*)/i
+    IMAGE_URL_WITH_CAPTION = /((https?:\/\/|\/)(\S+))(\s+)&quot;(.*?)&quot;/i
+    IMAGE_URL_WITH_CLASS = /(\w+)(\s+)((https?:\/\/|\/)(\S+))/i
+    IMAGE_URL = /((https?:\/\/|\/)(\S+))/i
+    def initialize(tag_name, markup, tokens)
+      super
+      if markup =~ IMAGE_URL_WITH_CLASS_AND_CAPTION_AND_LINK
+        @class   = $1
+        @url     = $3
+        @caption = $7
+        @link = $9
+      elsif markup =~ IMAGE_URL_WITH_CLASS_AND_CAPTION
+        @class   = $1
+        @url     = $3
+        @caption = $7
+      elsif markup =~ IMAGE_URL_WITH_CAPTION
+        @url     = $1
+        @caption = $5
+      elsif markup =~ IMAGE_URL_WITH_CLASS
+        @class = $1
+        @url   = $3
+      elsif markup =~ IMAGE_URL
+        @url = $1
+      end
+    end
+    def render(context)
+      if @class
+        source = &quot;&lt;figure class='#{@class}'&gt;&quot;
+      else
+        source = &quot;&lt;figure&gt;&quot;
+      end
+      if @link
+        source += &quot;&lt;a href=\&quot;#{@link}\&quot;&gt;&quot;
+      end
+      source += &quot;&lt;img src=\&quot;#{@url}\&quot;&gt;&quot;
+      if @link
+        source += &quot;&lt;/a&gt;&quot;
+      end
+      source += &quot;&lt;figcaption&gt;#{@caption}&lt;/figcaption&gt;&quot; if @caption
+      source += &quot;&lt;/figure&gt;&quot;
+      source
+    end
+  end
+end
+Liquid::Template.register_tag('image', Jekyll::ImageTag)
+</code></pre>
+
+<p>is written as this Hugo shortcode:</p>
+
+<pre><code>&lt;!-- image --&gt;
+&lt;figure {{ with .Get &quot;class&quot; }}class=&quot;{{.}}&quot;{{ end }}&gt;
+    {{ with .Get &quot;link&quot;}}&lt;a href=&quot;{{.}}&quot;&gt;{{ end }}
+        &lt;img src=&quot;{{ .Get &quot;src&quot; }}&quot; {{ if or (.Get &quot;alt&quot;) (.Get &quot;caption&quot;) }}alt=&quot;{{ with .Get &quot;alt&quot;}}{{.}}{{else}}{{ .Get &quot;caption&quot; }}{{ end }}&quot;{{ end }} /&gt;
+    {{ if .Get &quot;link&quot;}}&lt;/a&gt;{{ end }}
+    {{ if or (or (.Get &quot;title&quot;) (.Get &quot;caption&quot;)) (.Get &quot;attr&quot;)}}
+    &lt;figcaption&gt;{{ if isset .Params &quot;title&quot; }}
+        {{ .Get &quot;title&quot; }}{{ end }}
+        {{ if or (.Get &quot;caption&quot;) (.Get &quot;attr&quot;)}}&lt;p&gt;
+        {{ .Get &quot;caption&quot; }}
+        {{ with .Get &quot;attrlink&quot;}}&lt;a href=&quot;{{.}}&quot;&gt; {{ end }}
+            {{ .Get &quot;attr&quot; }}
+        {{ if .Get &quot;attrlink&quot;}}&lt;/a&gt; {{ end }}
+        &lt;/p&gt; {{ end }}
+    &lt;/figcaption&gt;
+    {{ end }}
+&lt;/figure&gt;
+&lt;!-- image --&gt;
+</code></pre>
+
+<h3 id="usage">Usage</h3>
+
+<p>I simply changed:</p>
+
+<pre><code>{% image full http://farm5.staticflickr.com/4136/4829260124_57712e570a_o_d.jpg &quot;One of my favorite touristy-type photos. I secretly waited for the good light while we were &quot;having fun&quot; and took this. Only regret: a stupid pole in the top-left corner of the frame I had to clumsily get rid of at post-processing.&quot; -&gt;http://www.flickr.com/photos/alexnormand/4829260124/in/set-72157624547713078/ %}
+</code></pre>
+
+<p>to this (this example uses a slightly extended version named <code>fig</code>, different than the built-in <code>figure</code>):</p>
+
+<pre><code>{{% fig class=&quot;full&quot; src=&quot;http://farm5.staticflickr.com/4136/4829260124_57712e570a_o_d.jpg&quot; title=&quot;One of my favorite touristy-type photos. I secretly waited for the good light while we were having fun and took this. Only regret: a stupid pole in the top-left corner of the frame I had to clumsily get rid of at post-processing.&quot; link=&quot;http://www.flickr.com/photos/alexnormand/4829260124/in/set-72157624547713078/&quot; %}}
+</code></pre>
+
+<p>As a bonus, the shortcode named parameters are, arguably, more readable.</p>
+
+<h2 id="finishing-touches">Finishing touches</h2>
+
+<h3 id="fix-content">Fix content</h3>
+
+<p>Depending on the amount of customization that was done with each post with Jekyll, this step will require more or less effort. There are no hard and fast rules here except that <code>hugo server --watch</code> is your friend. Test your changes and fix errors as needed.</p>
+
+<h3 id="clean-up">Clean up</h3>
+
+<p>You&rsquo;ll want to remove the Jekyll configuration at this point. If you have anything else that isn&rsquo;t used, delete it.</p>
+
+<h2 id="a-practical-example-in-a-diff">A practical example in a diff</h2>
+
+<p><a href="http://heyitsalex.net/">Hey, it&rsquo;s Alex</a> was migrated in less than a <em>father-with-kids day</em> from Jekyll to Hugo. You can see all the changes (and screw-ups) by looking at this <a href="https://github.com/alexandre-normand/alexandre-normand/compare/869d69435bd2665c3fbf5b5c78d4c22759d7613a...b7f6605b1265e83b4b81495423294208cc74d610">diff</a>.</p>
+
+</span>
+        </div></article>
+
+    <nav id="post-nav" aria-label="Pagination">
+            <ul class="pagination grid-x grid-x-padding full">
+                
+                <li class="pagination-previous cell small-order-2 medium-5 medium-order-1">
+                    <a class="button" href="/post/install-hugo-theme-midnight-https-bluestnight-com-guides-midnight-getting-started/" rel="prev">
+                        <span class="sr-text">Previous:</span>
+                        Install Hugo &amp; Theme Midnight</a>
+                </li>
+                
+                
+                <li class="pagination-next cell small-order-1 medium-5 medium-order-2 medium-offset-2">
+                    <a class="button" href="/post/creating-a-new-theme/" rel="next">
+                        <span class="sr-text">Next:</span>Creating a New Theme
+                    </a>
+                </li>
+                
+            </ul>
+        </nav>
+
+    <div class="post-comments"><div id="disqus_thread"></div></div>
+</main>
+
+                        <aside class="cell small-12 small-order-2 medium-4" itemscope itemtype="http://schema.org/WPSideBar"><div class="widget" id="search-container">
+    <header>
+        <span class="widget-header"><span class="fas fa-search fa-xs" aria-hidden></span> Search</span>
+    </header>
+    <input type="search" name="search" id="searchbox" placeholder="Search..." autocomplete="off"/>
+    <div id="search-results" class="grid-y hide"></div>
+</div>
+<div class="widget">
+    
+    
+        
+    
+
+    
+        
+            
+        
+	
+	<header>
+		<span class="widget-header"><span class="fas fa-pencil-alt fa-xs" aria-hidden></span> <a href="/post/">Recent Posts</a></span>
+	</header>
+	
+			<a class="widget-header-small button" href="/index.xml"><span class="fas fa-rss fa-xs" aria-hidden></span> Subscribe to the Site</a>
+		<ul><li><a href="/post/creating-a-new-theme/">Creating a New Theme</a></li><li><a href="/post/migrate-from-jekyll/">Migrate to Hugo from Jekyll</a></li><li><a href="/post/install-hugo-theme-midnight-https-bluestnight-com-guides-midnight-getting-started/">Install Hugo &amp; Theme Midnight</a></li><li><a href="/post/git-basics/">Git basics</a></li><li><a href="/post/blog-integrated-with-blogdown-hugo-rstudio-and-github-seamlessly/">Hosting source code and generating static pages in Github</a></li><li><a href="/post/prefix-bash-code-with-using-awk/">Prefix bash code with $ using `awk`</a></li><li><a href="/post/11the-environment/">11The Environment</a></li><li><a href="/post/2015-07-23-r-rmarkdown/">Hello R Markdown</a></li><li><a href="/post/goisforlovers/">(Hu)go Template Primer</a></li></ul>
+</div>
+<div class="widget">
+	<header>
+		<span class="widget-header">
+			<span class="fas fa-folder fa-xs" aria-hidden></span>
+            <a href="/categories/">Categories</a>
+        </span>
+	</header>
+	<ul><li>
+            <a href="/categories/linux/">
+                Linux
+            </a>
+        </li>
+		<li>
+            <a href="/categories/development/">
+                Development
+            </a>
+        </li>
+		<li>
+            <a href="/categories/golang/">
+                Golang
+            </a>
+        </li>
+		<li>
+            <a href="/categories/r/">
+                R
+            </a>
+        </li>
+		<li>
+            <a href="/categories/rstudio/">
+                Rstudio
+            </a>
+        </li>
+		
+	</ul>
+</div>
+<div class="widget">
+	<header>
+		<span class="widget-header"><span class="fas fa-tags fa-xs" aria-hidden></span> <a href="/tags/">Tags</a></span>
+	</header>
+	<div class="grid-x grid-padding-x" id="sidebar-tags"><a class="cell shrink" href="/tags/development/" title="development">
+                development
+			</a><a class="cell shrink" href="/tags/go/" title="go">
+                go
+			</a><a class="cell shrink" href="/tags/golang/" title="golang">
+                golang
+			</a><a class="cell shrink" href="/tags/hugo/" title="hugo">
+                hugo
+			</a><a class="cell shrink" href="/tags/awk/" title="awk">
+                awk
+			</a><a class="cell shrink" href="/tags/blogdown/" title="blogdown">
+                blogdown
+			</a><a class="cell shrink" href="/tags/git/" title="git">
+                git
+			</a><a class="cell shrink" href="/tags/github/" title="github">
+                github
+			</a><a class="cell shrink" href="/tags/plot/" title="plot">
+                plot
+			</a><a class="cell shrink" href="/tags/r-markdown/" title="r markdown">
+                r markdown
+			</a><a class="cell shrink" href="/tags/regression/" title="regression">
+                regression
+			</a><a class="cell shrink" href="/tags/templates/" title="templates">
+                templates
+			</a><a class="cell shrink" href="/tags/themes/" title="themes">
+                themes
+			</a></div>
+</div>
+</aside>
+
+                    </div>
+                    <footer class="cell grid-x full align-middle">
+    <div class="cell medium-4 small-text-center medium-text-left medium-left small-order-1 grid-x">
+        <div class="cell">
+            <small>
+                &copy; 2019
+                <span itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                    <span itemprop="name">
+                        Canyi Chen.
+                    </span>
+                </span>
+            </small>
+        </div>
+        <div class="cell">
+            <small>
+                Built with <a href="https://gohugo.io">Hugo</a> and <a href="https://bluestnight.com/products/midnight/">Midnight</a>.
+            </small>
+        </div>
+        
+    </div>
+    <div class="cell medium-4 small-text-center medium-text-center small-order-2 grid-x">
+        
+        <div class="cell small-full small-text-center grid-x">
+            
+            
+            
+        </div>
+    </div>
+    <div id="social-icons" class="grid-x cell medium-4 small-text-center small-order-3 medium-text-right">
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="https://github.com/ccybnumath/ccybnumath.github.io" class="cell shrink" rel="me nofollow" title="GitHub" aria-title="Fork me on GitHub!">
+
+    <span class="fa-stack fa-xs">
+        <span class="fas fa-square fa-stack-2x"></span>
+        <span class="fab fa-github fa-stack-1x fa-inverse"></span>
+    </span>
+
+</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</footer>
+
+                </div>
+            </div>
+            
+<script type="text/javascript" src="/js/iubenda.min.js" integrity="sha512-z4PhNX7vuL3xVChQ1m2AB9Yg5AULVxXcg/SpIdNs6c5H0NE8XYXysP&#43;DGNKHfuwvY7kxvUdBeoGlODJ6&#43;SfaPg=="></script>
+
+<script type="text/javascript" src="/js/jquery.slim.min.js" integrity="sha512-Vh3gVmRI2jSBsal9/runMkMofsFtK8Y853PR0gU05T7GALp&#43;LkR&#43;7eJVOEfLccmsW6YPcJZttDIy6At3hyfk3g==" defer></script><script type="text/javascript" src="/js/foundation.min.js" integrity="sha512-xk8mY&#43;d42YkkVC6T2d6aO7SczKKDotCA3sZk1/gY0/QCzFrp8UNt&#43;x03xSnVS0mJUfmLH2QTzEZ2dN9&#43;XNIy0w==" defer></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.1.3/lunr.min.js" defer></script><script type="text/javascript" src="/js/widgets/search.min.js" integrity="sha512-d/tTum6UX9Z0PBv62AjaeUBYXLBODfQ/IAIBIy/WCDxioKM8cY0e/eMyA3SbL2oSqZ1XjShtHkD3qJtSGwBeDQ==" defer></script>
+<script> 
+    var disqus_onload = false;
+    (function() { 
+      var d = document, s = d.createElement('script');
+  
+      s.src = 'https:\/\/ccybnumath-github-io.disqus.com\/embed.js'; s.async = true;
+  
+      s.setAttribute('data-timestamp', +new Date());
+      s.onload = function(){
+          disqus_onload = true;
+      };
+      s.onerror = function(){
+          disqus_onload = false;
+      };
+      (d.head || d.body).appendChild(s); 
+      setTimeout(function(){
+            if ( !disqus_onload ){
+                disqus_onload = true;
+                var mydiv = document.getElementById("disqus_thread");
+                var pnode = d.createElement('p');
+                pnode.innerHTML = 'Please get across the GFW to comment this article';
+                pnode.setAttribute('style', 'font-size:18px;color:red;text-align:center;');
+                mydiv.appendChild(pnode);
+            }
+        }, 5000); 
+    })();
+</script>
+<script type="text/javascript" src="/js/index.min.js" integrity="sha512-YtQNoHzM2e3Fogp&#43;RCYOYoBOzEIGHgvaTGNDrBnvwl47l195xvC1h4YbG9oAbREHMq&#43;Ed3Kx6NYT2xe6KNPGvg==" defer></script>
+        </div>
+    </body>
+</html>

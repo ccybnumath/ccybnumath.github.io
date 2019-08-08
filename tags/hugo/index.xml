@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hugo on Canyi Chen</title>
+    <link>/tags/hugo/</link>
+    <description>Recent content in hugo on Canyi Chen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 07 Aug 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Install Hugo &amp; Theme Midnight</title>
+      <link>/post/install-hugo-theme-midnight-https-bluestnight-com-guides-midnight-getting-started/</link>
+      <pubDate>Wed, 07 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/install-hugo-theme-midnight-https-bluestnight-com-guides-midnight-getting-started/</guid>
+      <description> Mainly follow quick-start.
+ Installment
+sudo apt-get update sudo apt-get install hugo hugo version # check version hugo new site www.chencanyi.cn cd www.chencanyi.cn git init git submodule add https://gitlab.com/BluestNight/Midnight.git themes/Midnight cp themes/Midnight/exampleS ite/config.toml . -f Add some content(Optional)
+hugo new posts/my-first-post.md Start server
+hugo server -D References https://bluestnight.com/guides/midnight/getting-started/
+ https://themes.gohugo.io/theme/Midnight/
+ https://gohugo.io/getting-started/quick-start/
+  </description>
+    </item>
+    
+    <item>
+      <title>Getting Started with Hugo</title>
+      <link>/post/hugoisforlovers/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>/post/hugoisforlovers/</guid>
+      <description>Step 1. Install Hugo Go to Hugo releases and download the appropriate version for your OS and architecture.
+Save it somewhere specific as we will be using it in the next step.
+More complete instructions are available at Install Hugo
+Step 2. Build the Docs Hugo has its own example site which happens to also be the documentation site you are reading right now.
+Follow the following steps:
+ Clone the Hugo repository Go into the repo Run hugo in server mode and build the docs Open your browser to http://localhost:1313  Corresponding pseudo commands:</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>linux on Canyi Chen</title>
+    <link>/categories/linux/</link>
+    <description>Recent content in linux on Canyi Chen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 07 Aug 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Install Hugo &amp; Theme Midnight</title>
+      <link>/post/install-hugo-theme-midnight-https-bluestnight-com-guides-midnight-getting-started/</link>
+      <pubDate>Wed, 07 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/install-hugo-theme-midnight-https-bluestnight-com-guides-midnight-getting-started/</guid>
+      <description> Mainly follow quick-start.
+ Installment
+sudo apt-get update sudo apt-get install hugo hugo version # check version hugo new site www.chencanyi.cn cd www.chencanyi.cn git init git submodule add https://gitlab.com/BluestNight/Midnight.git themes/Midnight cp themes/Midnight/exampleS ite/config.toml . -f Add some content(Optional)
+hugo new posts/my-first-post.md Start server
+hugo server -D References https://bluestnight.com/guides/midnight/getting-started/
+ https://themes.gohugo.io/theme/Midnight/
+ https://gohugo.io/getting-started/quick-start/
+  </description>
+    </item>
+    
+    <item>
+      <title>Git basics</title>
+      <link>/post/git-basics/</link>
+      <pubDate>Tue, 06 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/git-basics/</guid>
+      <description>A great and easy understanding introduction to git. Here are just my notes.
+ force pushing
+git push -u origin master -f Create new branch
+git checkout -b src switch branch
+git checkout src Branch src has already existed.
+ show all branches
+git branch show commitment history
+git log git log --graph Display with less
+ Roll back
+# roll back one step git reset --hard HEAD~1 git add .</description>
+    </item>
+    
+    <item>
+      <title>Prefix bash code with $ using `awk`</title>
+      <link>/post/prefix-bash-code-with-using-awk/</link>
+      <pubDate>Tue, 06 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/prefix-bash-code-with-using-awk/</guid>
+      <description> Problem We plan to prefix $ before bash code block.
+Solution Use awk in bash line to progress strings.
+# .zshrc alias bashcode=Bashcode function Bashcode(){ history | awk &amp;#39;{print &amp;#34;$ &amp;#34; $2}&amp;#39; } References  http://www.ruanyifeng.com/blog/2018/11/awk.html https://gregable.com/2010/09/why-you-should-know-just-little-awk.html  </description>
+    </item>
+    
+    <item>
+      <title>11The Environment</title>
+      <link>/post/11the-environment/</link>
+      <pubDate>Wed, 27 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/11the-environment/</guid>
+      <description>printenv set export alias As we discussed earlier, the shell maintains a body of information during our shell session called the environment. Data stored in the environment is used by programs to determine facts about the system&amp;rsquo;s configuration.
+What Is Stored In The Environment? sheel variables
+ environment variables
+ aliases
+ shell functions
+Examing The Environment printenv and set
+printenv | less printenv USER set | less echo $USER alias</description>
+    </item>
+    
+  </channel>
+</rss>

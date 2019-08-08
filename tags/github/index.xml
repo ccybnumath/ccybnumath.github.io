@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>github on Canyi Chen</title>
+    <link>/tags/github/</link>
+    <description>Recent content in github on Canyi Chen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 06 Aug 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/github/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hosting source code and generating static pages in Github</title>
+      <link>/post/blog-integrated-with-blogdown-hugo-rstudio-and-github-seamlessly/</link>
+      <pubDate>Tue, 06 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/blog-integrated-with-blogdown-hugo-rstudio-and-github-seamlessly/</guid>
+      <description> ##
+References </description>
+    </item>
+    
+  </channel>
+</rss>
