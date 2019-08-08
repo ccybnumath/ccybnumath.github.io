@@ -1,7 +1,39 @@
-{{- $url := printf "%s/js/commento.js" $.Site.Params.comments.commento.base_url -}}
+{{- $url := printf "%s/embed.js" $.Site.Params.comments.commento.base_url -}}
 {{- $res := resources.Get "css/comments/commento.css" -}}
 {{- if not $.Site.Params.no_minify -}}
     {{- $res = $res | minify -}}
 {{- end -}}
-{{- $attrs := printf "data-css-override=\"%s\"" $res.RelPermalink -}}
-{{- partial "script" (dict "Src" $url "Tracks" true "Attrs" $attrs "Defer" true "Async" true "Root" $) -}}
+<!-- 
+to do formula
+-->
+<script> 
+    var disqus_onload = false;
+    (function() { 
+      var d = document, s = d.createElement('script');
+  
+      s.src = '{{ $url }}'; s.async = true;
+  
+      s.setAttribute('data-timestamp', +new Date());
+      s.onload = function(){
+          disqus_onload = true;
+      };
+      s.onerror = function(){
+          disqus_onload = false;
+      };
+      (d.head || d.body).appendChild(s); 
+      setTimeout(function(){
+            if ( !disqus_onload ){
+                disqus_onload = true;
+                var mydiv = document.getElementById("disqus_thread");
+                var pnode = d.createElement('p');
+                pnode.innerHTML = 'Please get across the GFW to comment this article';
+                pnode.setAttribute('style', 'font-size:18px;color:red;text-align:center;');
+                mydiv.appendChild(pnode);
+            }
+        }, 5000); 
+    })();
+</script>
+<!--
+      
+
+-->

@@ -22,6 +22,8 @@
 
     
     
+        <link rel="stylesheet" href="/css/forms.min.css" integrity="sha512-HFLITUp3WlAxFTDsGCwrGbp6HMCuilYVDQcMoKPfp/vVfBZHlIUxf1PjVr7Pbe2HG6PudC3LPj1HrpwU4lCtLw==">
+    
     
     
 <link rel="preload" media="print" type="text/css" href="/css/print.min.2e0961e511885e38a09cc9a9ff3de5ce7d7d2186bb9ed98a61f176688d4ef61a.css" integrity="sha256-Lglh5RGIXjignMmp/z3lzn19IYa7ntmKYfF2aI1O9ho=" as="style"><link rel="dns-prefetch" href="https://cdnjs.cloudflare.com/" />
@@ -97,11 +99,6 @@
                         </nav>
                         </div>
                     <div id="main-container" class="cell grid-x grid-padding-x grid-container" role="main" itemprop="mainContentOfPage">
-                        
-                            <div class="callout cell text-center">
-                                Interested in using Midnight? Check out the <a href="https://bluestnight.com/guides/midnight/getting-started/">getting started</a>
-guide and the <a href="https://bluestnight.com/docs/midnight/users/">user documentation</a> for more information.
-                            </div>
                         
                         
                         
@@ -507,7 +504,7 @@ so, such as in this example:</p>
             </ul>
         </nav>
 
-    
+    <div class="post-comments"><div id="disqus_thread"></div></div>
 </main>
 
                         <aside class="cell small-12 small-order-2 medium-4" itemscope itemtype="http://schema.org/WPSideBar"><div class="widget" id="search-container">
@@ -707,7 +704,35 @@ so, such as in this example:</p>
             
 <script type="text/javascript" src="/js/iubenda.min.js" integrity="sha512-z4PhNX7vuL3xVChQ1m2AB9Yg5AULVxXcg/SpIdNs6c5H0NE8XYXysP&#43;DGNKHfuwvY7kxvUdBeoGlODJ6&#43;SfaPg=="></script>
 
-<script type="text/javascript" src="/js/jquery.slim.min.js" integrity="sha512-Vh3gVmRI2jSBsal9/runMkMofsFtK8Y853PR0gU05T7GALp&#43;LkR&#43;7eJVOEfLccmsW6YPcJZttDIy6At3hyfk3g==" defer></script><script type="text/javascript" src="/js/foundation.min.js" integrity="sha512-xk8mY&#43;d42YkkVC6T2d6aO7SczKKDotCA3sZk1/gY0/QCzFrp8UNt&#43;x03xSnVS0mJUfmLH2QTzEZ2dN9&#43;XNIy0w==" defer></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.1.3/lunr.min.js" defer></script><script type="text/javascript" src="/js/widgets/search.min.js" integrity="sha512-d/tTum6UX9Z0PBv62AjaeUBYXLBODfQ/IAIBIy/WCDxioKM8cY0e/eMyA3SbL2oSqZ1XjShtHkD3qJtSGwBeDQ==" defer></script><script type="text/javascript" src="/js/index.min.js" integrity="sha512-YtQNoHzM2e3Fogp&#43;RCYOYoBOzEIGHgvaTGNDrBnvwl47l195xvC1h4YbG9oAbREHMq&#43;Ed3Kx6NYT2xe6KNPGvg==" defer></script>
+<script type="text/javascript" src="/js/jquery.slim.min.js" integrity="sha512-Vh3gVmRI2jSBsal9/runMkMofsFtK8Y853PR0gU05T7GALp&#43;LkR&#43;7eJVOEfLccmsW6YPcJZttDIy6At3hyfk3g==" defer></script><script type="text/javascript" src="/js/foundation.min.js" integrity="sha512-xk8mY&#43;d42YkkVC6T2d6aO7SczKKDotCA3sZk1/gY0/QCzFrp8UNt&#43;x03xSnVS0mJUfmLH2QTzEZ2dN9&#43;XNIy0w==" defer></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.1.3/lunr.min.js" defer></script><script type="text/javascript" src="/js/widgets/search.min.js" integrity="sha512-d/tTum6UX9Z0PBv62AjaeUBYXLBODfQ/IAIBIy/WCDxioKM8cY0e/eMyA3SbL2oSqZ1XjShtHkD3qJtSGwBeDQ==" defer></script>
+<script> 
+    var disqus_onload = false;
+    (function() { 
+      var d = document, s = d.createElement('script');
+  
+      s.src = 'https:\/\/ccybnumath-github-io.disqus.com\/embed.js'; s.async = true;
+  
+      s.setAttribute('data-timestamp', +new Date());
+      s.onload = function(){
+          disqus_onload = true;
+      };
+      s.onerror = function(){
+          disqus_onload = false;
+      };
+      (d.head || d.body).appendChild(s); 
+      setTimeout(function(){
+            if ( !disqus_onload ){
+                disqus_onload = true;
+                var mydiv = document.getElementById("disqus_thread");
+                var pnode = d.createElement('p');
+                pnode.innerHTML = 'Please get across the GFW to comment this article';
+                pnode.setAttribute('style', 'font-size:18px;color:red;text-align:center;');
+                mydiv.appendChild(pnode);
+            }
+        }, 5000); 
+    })();
+</script>
+<script type="text/javascript" src="/js/index.min.js" integrity="sha512-YtQNoHzM2e3Fogp&#43;RCYOYoBOzEIGHgvaTGNDrBnvwl47l195xvC1h4YbG9oAbREHMq&#43;Ed3Kx6NYT2xe6KNPGvg==" defer></script>
         </div>
     </body>
 </html>

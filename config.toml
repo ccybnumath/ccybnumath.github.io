@@ -71,10 +71,10 @@ enableRobotsTXT = true
     #no_minimize = true
 
     ## Set a site-wide notice for all visitors to all pages.
-    alert = """
-Interested in using Midnight? Check out the [getting started](https://bluestnight.com/guides/midnight/getting-started/)
-guide and the [user documentation](https://bluestnight.com/docs/midnight/users/) for more information.
-    """
+#    alert = """
+#Interested in using Midnight? Check out the [getting started](https://bluestnight.com/guides/midnight/getting-started/)
+#guide and the [user documentation](https://bluestnight.com/docs/midnight/users/) for more information.
+#    """
 
 ## Midnight can integrate custom shortcodes into the theme. For more
 ## about this, see https://bluestnight.com/docs/midnight/developers/
@@ -126,10 +126,10 @@ guide and the [user documentation](https://bluestnight.com/docs/midnight/users/)
 ## See also: https://gitlab.com/commento/commento-ce
 ## See also: https://bluestnight.com/docs/midnight/users/pages/comments/
 ## See also: https://bluestnight.com/docs/midnight/developers/comments/
-#[params.comments]
-    #provider = "commento"
-    #[params.comments.commento]
-        #base_url = "https://comments.example.com"
+[params.comments]
+    provider = "commento"
+    [params.comments.commento]
+        base_url = "https://ccybnumath-github-io.disqus.com"
 
 ## Set custom font styles
 ## Values can be one of the following: "serif", "sans-serif", "slab-serif"
