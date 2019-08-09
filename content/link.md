@@ -1,5 +1,7 @@
 ---
 title: Links
 disable_comments: true
-disable_title: true
+menu: 
+  main
+weight: 4
 ---

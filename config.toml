@@ -45,7 +45,7 @@ enableRobotsTXT = true
     tagline = "Using R&Python"
 
     ## Description of your site - for use in SEO
-    description = "A useful description for search engine results"
+    description = "Canyi Chen's blog"
 
     ## 'authorbox' enables/disables the authorbox sitewide (can be disabled per page).
     ## 'author' is the name of the default author of all pages (can change per page).
@@ -63,8 +63,8 @@ enableRobotsTXT = true
     ## Set a site thumbnail/logo that appears next to the site title
     ## Optionally make the corners of the logo rounded by a given amount
     ## See also: https://bluestnight.com/docs/midnight/users/site/appearance/#header-thumbnail
-    #thumbnail = "images/thumbnail.png"
-    #thumbnail_radius = "0%"
+    thumbnail = "images/thumbnail.png"
+    thumbnail_radius = "0%"
 
     ## Disable the use of minified JavaScript and CSS
     ## Useful only for debugging purposes
@@ -183,6 +183,7 @@ enableRobotsTXT = true
 [params.social]
 ##    gitlab = "BluestNight/Midnight"
     github = "ccybnumath/ccybnumath.github.io"
+    email = "chency1997@ruc.edu.cn?subject=&cc=ccy199705@gmail.com&body="
 
 ## Options used while generating server configuration files.
 ## See https://bluestnight.com/docs/midnight/users/server/ for more.

@@ -1,19 +1,16 @@
 ---
 date: "2014-04-09"
 menu: main
-title: About Hugo
-weight: 4
+title: About
+weight: 10
 ---
+## Canyi Chen | 陈灿贻
+I am Canyi Chen, a doctor candidate in Renmin University of China majored in Statistics.
 
-Hugo is the **world’s fastest framework for building websites**. It is written in Go.
+## Education
+* Ph.D. Statistics, Renmin University of China
+* B.S. in Mathematics, Beijing Normal University, 2014–2018
 
-It makes use of a variety of open source projects including:
+Thesis: 
 
-* https://github.com/russross/blackfriday
-* https://github.com/alecthomas/chroma
-* https://github.com/muesli/smartcrop
-* https://github.com/spf13/cobra
-* https://github.com/spf13/viper
-
-Learn more and contribute on [GitHub](https://github.com/gohugoio).
-
+Advisor: Xingwei Tong

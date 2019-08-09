@@ -2,5 +2,7 @@
 author: Canyi Chen
 title: Resource
 disable_comments: true
-disable_title: true
+weight: 3
+menu:
+  main
 ---

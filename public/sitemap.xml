@@ -8,18 +8,20 @@
   </url>
   
   <url>
+    <loc>/research/</loc>
+  </url>
+  
+  <url>
+    <loc>/resource/</loc>
+  </url>
+  
+  <url>
+    <loc>/link/</loc>
+  </url>
+  
+  <url>
     <loc>/about/</loc>
     <lastmod>2014-04-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/creating-a-new-theme/</loc>
-    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/migrate-from-jekyll/</loc>
-    <lastmod>2014-03-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -171,6 +173,11 @@
   </url>
   
   <url>
+    <loc>/post/creating-a-new-theme/</loc>
+    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/post/goisforlovers/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
   </url>
@@ -223,15 +230,8 @@
   </url>
   
   <url>
-    <loc>/link/</loc>
-  </url>
-  
-  <url>
-    <loc>/research/</loc>
-  </url>
-  
-  <url>
-    <loc>/resource/</loc>
+    <loc>/post/migrate-from-jekyll/</loc>
+    <lastmod>2014-03-10T00:00:00+00:00</lastmod>
   </url>
   
 </urlset>
