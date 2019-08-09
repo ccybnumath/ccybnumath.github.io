@@ -1,0 +1,551 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>How to move mediawiki from Ubuntu to WSL?</title><meta name="description" itemprop="description" content="Problem How to move mediawiki from ubuntu to wsl? Solution Prerequisite  [wikifolder]: where your wiki locate [wikidb]: database wiki uses [wikidb_user]: user of database Assuming we have two servers:  Server 1 [wikifolder]: /var/www/html [wikidb]: wikidb [wikidb_user]: root  Server 2 [wikifolder]: /var/www/html [wikidb]: wikidb [wikidb_user]: wikiuser  php version consistency $ php --version PHP 7.0.33-10&#43;ubuntu18.04.1&#43;deb.sury.org&#43;1 (cli) (built: Aug 7 2019 09:51:13) ( NTS ) Copyright (c) 1997-2017 The PHP Group Zend Engine v3." id="desc"><meta name="generator" content="Hugo 0.56.3" /><meta name="keywords" itemprop="keywords" content="php,apache2,mysql,Mediawiki" id="keywords"><link rel="canonical" href="/post/how-to-move-mediawiki-from-ubuntu-to-wsl/">
+        
+
+<link rel="dns-prefetch" href="https://use.fontawesome.com/" />
+<link rel="preconnect" href="https://use.fontawesome.com/" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+
+
+
+<link rel="stylesheet" href="/css/foundation.min.css" integrity="sha512-Rd0Ui3eNZsRTe4UNVA+6WeU5VwpGAqqd/+xTbWI/T/OmcYqnrNWfJC02AjPbt5TuDGA3l4SFJdTH91QPP3vAFg==">
+  <link rel="stylesheet" href="/css/dark.min.css" integrity="sha512-gQpDgduBgmlAz6RR6+MVgbcrPEu+langkA9ngZtIrAjV8Hwcno+rUvaRjfUrzceGtO+gpoCAm4fLeMuAd/5v7Q=="><link rel="stylesheet" href="/styles.css" >
+    <link rel="stylesheet" href="/css/reset.min.css" integrity="sha512-xwmF/g6mhf+NqX9hnHhGV+cKVithh9ncEOreDW6jZXIqMiqsX5sxvVZXYuzz+8jLI7+wPFr/2/sg2x8Pp0a1VA=="><link rel="stylesheet" href="/css/fonts.min.css" integrity="sha512-xROhFE8XAZAs3OvW3/LUg6jCH7LgsxPMimBO/cpzYV7EgJgY5hbDX9rHqaOG5VrAv52NMXFuHiQ4xqnSgFvmqQ=="><link rel="stylesheet" href="/css/classes.min.css" integrity="sha512-VtHTX2MGmhT+/gSeNEwz2TD+OEFpz9G9AUjHc9mAjEgneeX2RiJphzfxqHrU+7afnuHkTkwMtY4hP5XAJCZ8eA=="><link rel="stylesheet" href="/css/pagination.min.css" integrity="sha512-exBmcmBqVqp5QRaF99l0MQPpD6X4/7RMJa9KY4pv/SP9R31qyqwuAIcPXZPm5jn7EMDVdviT45APg0RBfBA3Ow=="><link rel="stylesheet" href="/css/page.min.css" integrity="sha512-Eqq5awgR8Hau+25mfXATwps47CVesfD4jrw/QozL3eib52HmmlFnvxsERXuGCVQH1S1FSaQD/oycWN/WyGE5Aw=="><link rel="stylesheet" href="/css/widgets.min.css" integrity="sha512-KkbwfnV4akqRv+GVWIAa0UazaiDzkMev+Iq6AkHnzvOhQnb9tJnZwHySGGBjfwH3LOmMuaXl7an5uR36EuftaQ==">
+    <link rel="stylesheet" href="/css/single.min.css" integrity="sha512-Q1Zy+J4r0j/8Mjf7DVoh6X/Q1gWZqmvMf5IX7vxV7k97/NLY5novAjHRMReD9WWrDOq54t3sHsR7i8HwXlumlg==">
+
+
+
+    
+    
+        <link rel="stylesheet" href="/css/forms.min.css" integrity="sha512-HFLITUp3WlAxFTDsGCwrGbp6HMCuilYVDQcMoKPfp/vVfBZHlIUxf1PjVr7Pbe2HG6PudC3LPj1HrpwU4lCtLw==">
+    
+    
+    
+<link rel="preload" media="print" type="text/css" href="/css/print.min.2e0961e511885e38a09cc9a9ff3de5ce7d7d2186bb9ed98a61f176688d4ef61a.css" integrity="sha256-Lglh5RGIXjignMmp/z3lzn19IYa7ntmKYfF2aI1O9ho=" as="style"><link rel="dns-prefetch" href="https://cdnjs.cloudflare.com/" />
+<link rel="preconnect" href="https://cdnjs.cloudflare.com/" />
+
+<link rel="preload" href="/index.json" as="fetch" />
+
+<link rel="stylesheet" href="/css/widgets/search.min.css" integrity="sha512-7Otnz4Nae1tx47YRSs6kqu108FeNUGViWaATAkZTN2g/kps4bOyu+ukQwTyPMnZBM2U9epLm+YXnArC+I+UMgA==">
+<link rel="stylesheet" href="/css/widgets/taglist.min.css" integrity="sha512-0mtvLycPchph/Kw1OcdI3KmQ5qi8oOdiS35lFD+pNcEPTQ6rmiMAF9dztJkhsuuQsAuXADQCj2gC/O+axKh/Pw==">
+
+    <meta name="theme-color" content="#2073c9">
+    <meta name="apple-mobile-web-app-title" content="Canyi Chen">
+    <meta name="application-name" content="Canyi Chen">
+
+    </head>
+    <body itemscope itemtype="http://schema.org/WebPage">
+        <div class="off-canvas-wrapper">
+            <button id="off-canvas-toggle" type="button" class="button hide-for-medium" aria-label="Open Menu" data-toggle="main-nav-off-canvas">
+                <span class="fas fa-bars"></span>
+            </button>
+            <div class="off-canvas position-left" id="main-nav-off-canvas" data-off-canvas>
+                <nav>
+                    <ul class="vertical menu drilldown" data-drilldown><li itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <a class="main-nav button" tabindex="0" href="/post/" >
+            POSTS
+        </a></li><li itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <a class="main-nav button" tabindex="0" href="/about/" >
+            ABOUT HUGO
+        </a></li><li itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <a class="main-nav button" tabindex="0" href="/" >
+            TUTORIALS
+        </a><ul class="vertical menu">
+                <li itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <a class="main-nav button" tabindex="0" href="/post/creating-a-new-theme/" >
+            CREATING A NEW THEME
+        </a></li><li itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <a class="main-nav button" tabindex="0" href="/post/migrate-from-jekyll/" >
+            MIGRATING FROM JEKYLL
+        </a></li>
+            </ul></li></ul>
+                </nav>
+            </div>
+        <div id="site-container" class="grid-container full off-canvas-content">
+                <div class="grid-x full grid-container data-off-canvas-content">
+                    <div id="site-header" class="cell">
+                        <a href="/">
+                            <header class="small-text-center medium-text-left grid-x">
+                                <div id="site-title-container" class="cell shrink grid-y">
+                                    <div id="site-title" class="cell shrink" itemprop="name">Canyi Chen</div>
+                                    <div class="cell shrink" id="site-tagline">Using R&amp;Python</div>
+                                </div>
+                            </header>
+                        </a>
+                        <nav id="main-nav" class="small-hide">
+                          <ul class="dropdown menu" data-dropdown-menu><li itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <a class="main-nav button" tabindex="0" href="/post/" >
+            POSTS
+        </a></li><li itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <a class="main-nav button" tabindex="0" href="/about/" >
+            ABOUT HUGO
+        </a></li><li itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <a class="main-nav button" tabindex="0" href="/" >
+            TUTORIALS
+        </a><ul class="vertical menu">
+                <li itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <a class="main-nav button" tabindex="0" href="/post/creating-a-new-theme/" >
+            CREATING A NEW THEME
+        </a></li><li itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <a class="main-nav button" tabindex="0" href="/post/migrate-from-jekyll/" >
+            MIGRATING FROM JEKYLL
+        </a></li>
+            </ul></li></ul>
+                        </nav>
+                        </div>
+                    <div id="main-container" class="cell grid-x grid-padding-x grid-container" role="main" itemprop="mainContentOfPage">
+                        
+                        
+                        
+                        
+                        
+                        
+<main class="cell medium-8" >
+    <article id="post-article" itemscope itemtype="http://schema.org/Article" itemref="keywords desc">
+        <header id="page-header">
+            <h1 itemprop="headline">How to move mediawiki from Ubuntu to WSL?</h1><p id="post-metadata" class="grid-x grid-padding-x"><span class="cell shrink">
+                        <span class="far fa-clock fa-sm fa-fw" aria-hidden></span>
+                        <strong>Published:</strong>
+                        <time datetime="2019-08-09" content="2019-08-09" itemprop="datePublished">August 09, 2019</time>
+                    </span><span class="cell shrink">
+                        <span class="fas fa-folder fa-sm fa-fw" aria-hidden></span>
+                        <span class="sr-text">Categories: </span>
+                        
+                        <a href="/categories/wsl" rel="category">Wsl</a>, 
+                        <a href="/categories/linux" rel="category">Linux</a>
+                    </span><span class="cell shrink">
+                        <span class="fas fa-book fa-sm fa-fw" aria-hidden></span>
+                        <strong>Estimated Reading Time:</strong>
+                        ~<span itemprop="timeRequired">3 minutes</span>
+                    </span><span class="cell shrink">
+                        <span class="fas fa-tags fa-sm fa-fw" aria-hidden></span>
+                            
+                            
+                            <a itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL" href="/tags/php" rel="tag" itemprop="url">php</a>
+                        
+                            
+                            
+                            <a itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL" href="/tags/apache2" rel="tag" itemprop="url">apache2</a>
+                        
+                            
+                            
+                            <a itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL" href="/tags/mysql" rel="tag" itemprop="url">mysql</a>
+                        
+                            
+                            
+                            <a itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL" href="/tags/mediawiki" rel="tag" itemprop="url">mediawiki</a>
+                        </span></p>
+            
+        </header>
+        
+        <div id="post-content"><span itemprop="articleBody">
+
+<h2 id="problem">Problem</h2>
+
+<p>How to move mediawiki from ubuntu to wsl?</p>
+
+<h2 id="solution">Solution</h2>
+
+<h3 id="prerequisite">Prerequisite</h3>
+
+<ul>
+<li>[wikifolder]: where your wiki locate</li>
+<li>[wikidb]: database wiki uses</li>
+
+<li><p>[wikidb_user]: user of database
+Assuming we have two servers:</p></li>
+
+<li><p>Server 1</p>
+
+<pre><code>[wikifolder]: /var/www/html
+[wikidb]: wikidb
+[wikidb_user]: root
+</code></pre></li>
+
+<li><p>Server 2</p>
+
+<pre><code>[wikifolder]: /var/www/html
+[wikidb]: wikidb
+[wikidb_user]: wikiuser
+</code></pre></li>
+
+<li><p>php version consistency</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ php --version                                                  
+PHP <span class="m">7</span>.0.33-10+ubuntu18.04.1+deb.sury.org+1 <span class="o">(</span>cli<span class="o">)</span> <span class="o">(</span>built: Aug  <span class="m">7</span> <span class="m">2019</span> <span class="m">09</span>:51:13<span class="o">)</span> <span class="o">(</span> NTS <span class="o">)</span>                                            
+Copyright <span class="o">(</span>c<span class="o">)</span> <span class="m">1997</span>-2017 The PHP Group                            
+Zend Engine v3.0.0, Copyright <span class="o">(</span>c<span class="o">)</span> <span class="m">1998</span>-2017 Zend Technologies        
+with Zend OPcache v7.0.33-10+ubuntu18.04.1+deb.sury.org+1, Copyright <span class="o">(</span>c<span class="o">)</span> <span class="m">1999</span>-2017, by Zend Technologies             </code></pre></div>
+<p>Make sure your php version is compatible with <code>Mediawiki</code> version. Check <a href="https://www.mediawiki.org/wiki/Compatibility#PHP">Compatibility#PHP</a>.</p></li>
+
+<li><p>Install php7.0 in Ubuntu 18.04</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sudo apt-get install python3-software-properties
+sudo add-apt-repository ppa:ondrej/php
+sudo apt-get install -y php7.0
+sudo apt-get install php7.0-curl php7.0-dev php7.0-gd php7.0-imap php7.0-intl php7.0-mbstring php7.0-mysql php7.0-xml php7.0-zip</code></pre></div></li>
+
+<li><p>Apache2 in WSL</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sudo vi /etc/apache2/apache2.conf
+<span class="c1">## Add this at the end of file</span>
+<span class="c1"># AcceptFilter http none</span></code></pre></div>
+<p>Old mediawiki is in Server 1. We’d like to back up it, then scp to Server 2, finally restore from it in Server 2.</p>
+
+<h3 id="backup-database-in-service-1">backup database in Service 1</h3></li>
+
+<li><p>First insert the following line into</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># vi LocalSettings.php</span>
+<span class="nv">$wgReadOnly</span> <span class="o">=</span> <span class="s1">&#39;Dumping Database, Access will be restored shortly&#39;</span><span class="p">;</span></code></pre></div>
+<p>this can be removed as soon as the dump is completed.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">mysqldump --default-character-set<span class="o">=</span>binary -u root -p -h localhost --opt 
+wikidb &gt; wikidb-backup.sql</code></pre></div>
+<p>For more, See <a href="https://m.mediawiki.org/wiki/Special:MyLanguage/Manual:Backing_up_a_wiki#Mysqldump_from_the_command_line">Mysqldump_from_the_command_line</a>, and <a href="https://m.mediawiki.org/wiki/Special:MyLanguage/Manual:Backing_up_a_wiki">Back up in schedule</a>.</p></li>
+</ul>
+
+<h3 id="backup-website-in-service-1">backup website in Service 1</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1">## Be cautious with your mediawiki version, for the compability php&amp;mysql.</span>
+tar czpvf mediawiki-1.30.0-rc.0-backup.tar.gz /var/www/html</code></pre></div>
+<h3 id="restore-in-service-2">Restore in Service 2</h3>
+
+<ul>
+<li><p>Import the database backup
+On the server on which you are restoring MediaWiki, ensure you have</p>
+
+<ul>
+<li>a correctly-working instance of MySQL</li>
+
+<li><p>a MySQL user with appropriate permissions, if you can’t use MySQL user root</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">mkdir mediawiki_backup <span class="o">&amp;&amp;</span> <span class="nb">cd</span> mediawiki_backup/
+cp /mnt/c/Users/chencanyi/Videos/wikidb-backup.sql ~/mediawiki_backup/ <span class="c1"># or you can use scp</span></code></pre></div></li>
+</ul></li>
+
+<li><p>If a database exists and you want to entirely replace it from the backup. To destroy the database:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">mysqladmin -u wikiuser -p drop wikidb</code></pre></div></li>
+
+<li><p>Then to create a new database and restore from backup:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># Create mysql user wikiuser</span>
+sudo mysql -u root -p
+mysql&gt; GRANT ALL PRIVILEGES ON *.* TO wikiuser@localhost IDENTIFIED BY <span class="s2">&#34;2010.ccy&#34;</span><span class="p">;</span>
+mysqladmin -u wikiuser -p create wikidb
+mysql -u wikiuser -p wikidb &lt; wikidb-backup.sql</code></pre></div></li>
+
+<li><p>Import the MediaWiki files
+Assuming you are in Service 1.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">scp ubuntu@Service1:~/mediawiki_backup/mediawiki-1.30.0-rc.0-backup.tar.gz ~/mediawiki_backup/
+<span class="nb">cd</span> ~/mediawiki_backup/
+tar -xvzf mediawiki-1.30.0-rc.0-backup.tar.gz
+rm -fR <span class="o">[</span>wikifolder<span class="o">]</span>/
+mv ./var/www/html/* <span class="o">[</span>wikifolder<span class="o">]</span></code></pre></div></li>
+
+<li><p>Remember to change the database settings in LocalSettings.php(such as wgDBname, wgDBuser, wgDBpasswd).</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">php /var/www/html/maintenance/update.php</code></pre></div></li>
+
+<li><p>Restart apache2 &amp; mysql</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sudo service apache2 restart
+sudo service mysql restart</code></pre></div>
+<h3 id="check-the-configuration-file">Check the configuration file</h3></li>
+
+<li><p>IP</p></li>
+</ul>
+
+<h3 id="something-more">Something more</h3>
+
+<ul>
+<li><p>where to find database configure?</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> /var/www/html
+vi LocalSettings.php
+<span class="c1">## Something like</span>
+<span class="c1">## Database settings</span>
+<span class="nv">$wgDBtype</span> <span class="o">=</span> <span class="s2">&#34;mysql&#34;</span><span class="p">;</span>
+<span class="nv">$wgDBserver</span> <span class="o">=</span> <span class="s2">&#34;localhost&#34;</span><span class="p">;</span>
+<span class="nv">$wgDBname</span> <span class="o">=</span> <span class="s2">&#34;wikidb&#34;</span><span class="p">;</span>
+<span class="nv">$wgDBuser</span> <span class="o">=</span> <span class="s2">&#34;root&#34;</span><span class="p">;</span>
+<span class="nv">$wgDBpassword</span> <span class="o">=</span> <span class="s2">&#34;2010.ccy&#34;</span><span class="p">;</span></code></pre></div>
+<p>Backing up a website in short is backing up web files and database.</p>
+
+<h2 id="references">References</h2></li>
+
+<li><p><a href="https://m.mediawiki.org/wiki/Special:MyLanguage/Manual:Moving_a_wiki">https://m.mediawiki.org/wiki/Special:MyLanguage/Manual:Moving_a_wiki</a></p></li>
+
+<li><p><a href="https://blog.lilydjwg.me/2011/5/28/story-of-migrating-mediawiki.27048.html">https://blog.lilydjwg.me/2011/5/28/story-of-migrating-mediawiki.27048.html</a></p></li>
+
+<li><p><a href="https://m.mediawiki.org/wiki/Special:MyLanguage/Manual:Restoring_a_wiki_from_backup">Manual:Restoring a wiki from backup</a></p></li>
+
+<li><p><a href="https://m.mediawiki.org/wiki/Special:MyLanguage/Manual:Backing_up_a_wiki#Running_mysqldump_with_Cron">Manual:Backing up a wiki</a></p></li>
+
+<li><p><a href="https://blog.csdn.net/setoy/article/details/6562287">https://blog.csdn.net/setoy/article/details/6562287</a></p></li>
+
+<li><p><a href="https://www.cnblogs.com/feiffy/p/8660737.html">一文彻底解决Ubuntu上PHP的安装以及版本切换</a></p></li>
+
+<li><p><a href="https://www.mediawiki.org/wiki/Compatibility#PHP">Compatibility#PHP</a></p></li>
+
+<li><p><a href="https://blog.csdn.net/weixx3/article/details/80782479">Ubuntu18.04 安装MySQL</a></p></li>
+
+<li><p><a href="https://blog.csdn.net/Allen_xiaofei/article/details/79839719">Failed to enable APR_TCP_DEFER_ACCEPT</a></p></li>
+</ul>
+
+</span>
+        </div></article>
+
+    <nav id="post-nav" aria-label="Pagination">
+            <ul class="pagination grid-x grid-x-padding full">
+                
+                <li class="pagination-previous cell small-order-2 medium-5 medium-order-1">
+                    <a class="button" href="/post/install-hugo-theme-midnight-https-bluestnight-com-guides-midnight-getting-started/" rel="prev">
+                        <span class="sr-text">Previous:</span>
+                        Install Hugo &amp; Theme Midnight</a>
+                </li>
+                
+                
+                <li class="pagination-next cell small-order-1 medium-5 medium-order-2 medium-offset-2">
+                    <a class="button" href="/post/migrate-from-jekyll/" rel="next">
+                        <span class="sr-text">Next:</span>Migrating from Jekyll
+                    </a>
+                </li>
+                
+            </ul>
+        </nav>
+
+    <div class="post-comments"><div id="disqus_thread"></div></div>
+</main>
+
+                        <aside class="cell small-12 small-order-2 medium-4" itemscope itemtype="http://schema.org/WPSideBar"><div class="widget" id="search-container">
+    <header>
+        <span class="widget-header"><span class="fas fa-search fa-xs" aria-hidden></span> Search</span>
+    </header>
+    <input type="search" name="search" id="searchbox" placeholder="Search..." autocomplete="off"/>
+    <div id="search-results" class="grid-y hide"></div>
+</div>
+<div class="widget">
+    
+    
+        
+    
+
+    
+        
+            
+        
+	
+	<header>
+		<span class="widget-header"><span class="fas fa-pencil-alt fa-xs" aria-hidden></span> <a href="/post/">Recent Posts</a></span>
+	</header>
+	
+			<a class="widget-header-small button" href="/index.xml"><span class="fas fa-rss fa-xs" aria-hidden></span> Subscribe to the Site</a>
+		<ul><li><a href="/post/creating-a-new-theme/">Creating a New Theme</a></li><li><a href="/post/migrate-from-jekyll/">Migrate to Hugo from Jekyll</a></li><li><a href="/post/how-to-move-mediawiki-from-ubuntu-to-wsl/">How to move mediawiki from Ubuntu to WSL?</a></li><li><a href="/post/install-hugo-theme-midnight-https-bluestnight-com-guides-midnight-getting-started/">Install Hugo &amp; Theme Midnight</a></li><li><a href="/post/git-basics/">Git basics</a></li><li><a href="/post/blog-integrated-with-blogdown-hugo-rstudio-and-github-seamlessly/">Hosting source code and generating static pages in Github</a></li><li><a href="/post/prefix-bash-code-with-using-awk/">Prefix bash code with $ using `awk`</a></li><li><a href="/post/11the-environment/">11The Environment</a></li><li><a href="/post/2015-07-23-r-rmarkdown/">Hello R Markdown</a></li></ul>
+</div>
+<div class="widget">
+	<header>
+		<span class="widget-header">
+			<span class="fas fa-folder fa-xs" aria-hidden></span>
+            <a href="/categories/">Categories</a>
+        </span>
+	</header>
+	<ul><li>
+            <a href="/categories/linux/">
+                Linux
+            </a>
+        </li>
+		<li>
+            <a href="/categories/development/">
+                Development
+            </a>
+        </li>
+		<li>
+            <a href="/categories/golang/">
+                Golang
+            </a>
+        </li>
+		<li>
+            <a href="/categories/r/">
+                R
+            </a>
+        </li>
+		<li>
+            <a href="/categories/rstudio/">
+                Rstudio
+            </a>
+        </li>
+		
+	</ul>
+</div>
+<div class="widget">
+	<header>
+		<span class="widget-header"><span class="fas fa-tags fa-xs" aria-hidden></span> <a href="/tags/">Tags</a></span>
+	</header>
+	<div class="grid-x grid-padding-x" id="sidebar-tags"><a class="cell shrink" href="/tags/development/" title="development">
+                development
+			</a><a class="cell shrink" href="/tags/go/" title="go">
+                go
+			</a><a class="cell shrink" href="/tags/golang/" title="golang">
+                golang
+			</a><a class="cell shrink" href="/tags/hugo/" title="hugo">
+                hugo
+			</a><a class="cell shrink" href="/tags/apache2/" title="apache2">
+                apache2
+			</a><a class="cell shrink" href="/tags/awk/" title="awk">
+                awk
+			</a><a class="cell shrink" href="/tags/blogdown/" title="blogdown">
+                blogdown
+			</a><a class="cell shrink" href="/tags/git/" title="git">
+                git
+			</a><a class="cell shrink" href="/tags/github/" title="github">
+                github
+			</a><a class="cell shrink" href="/tags/mediawiki/" title="mediawiki">
+                mediawiki
+			</a><a class="cell shrink" href="/tags/mysql/" title="mysql">
+                mysql
+			</a><a class="cell shrink" href="/tags/php/" title="php">
+                php
+			</a><a class="cell shrink" href="/tags/plot/" title="plot">
+                plot
+			</a><a class="cell shrink" href="/tags/r-markdown/" title="r markdown">
+                r markdown
+			</a><a class="cell shrink" href="/tags/regression/" title="regression">
+                regression
+			</a><a class="cell shrink" href="/tags/templates/" title="templates">
+                templates
+			</a><a class="cell shrink" href="/tags/themes/" title="themes">
+                themes
+			</a></div>
+</div>
+</aside>
+
+                    </div>
+                    <footer class="cell grid-x full align-middle">
+    <div class="cell medium-4 small-text-center medium-text-left medium-left small-order-1 grid-x">
+        <div class="cell">
+            <small>
+                &copy; 2019
+                <span itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                    <span itemprop="name">
+                        Canyi Chen.
+                    </span>
+                </span>
+            </small>
+        </div>
+        <div class="cell">
+            <small>
+                Built with <a href="https://gohugo.io">Hugo</a> and <a href="https://bluestnight.com/products/midnight/">Midnight</a>.
+            </small>
+        </div>
+        
+    </div>
+    <div class="cell medium-4 small-text-center medium-text-center small-order-2 grid-x">
+        
+        <div class="cell small-full small-text-center grid-x">
+            
+            
+            
+        </div>
+    </div>
+    <div id="social-icons" class="grid-x cell medium-4 small-text-center small-order-3 medium-text-right">
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="https://github.com/ccybnumath/ccybnumath.github.io" class="cell shrink" rel="me nofollow" title="GitHub" aria-title="Fork me on GitHub!">
+
+    <span class="fa-stack fa-xs">
+        <span class="fas fa-square fa-stack-2x"></span>
+        <span class="fab fa-github fa-stack-1x fa-inverse"></span>
+    </span>
+
+</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</footer>
+
+                </div>
+            </div>
+            
+<script type="text/javascript" src="/js/iubenda.min.js" integrity="sha512-z4PhNX7vuL3xVChQ1m2AB9Yg5AULVxXcg/SpIdNs6c5H0NE8XYXysP&#43;DGNKHfuwvY7kxvUdBeoGlODJ6&#43;SfaPg=="></script>
+
+<script type="text/javascript" src="/js/jquery.slim.min.js" integrity="sha512-Vh3gVmRI2jSBsal9/runMkMofsFtK8Y853PR0gU05T7GALp&#43;LkR&#43;7eJVOEfLccmsW6YPcJZttDIy6At3hyfk3g==" defer></script><script type="text/javascript" src="/js/foundation.min.js" integrity="sha512-xk8mY&#43;d42YkkVC6T2d6aO7SczKKDotCA3sZk1/gY0/QCzFrp8UNt&#43;x03xSnVS0mJUfmLH2QTzEZ2dN9&#43;XNIy0w==" defer></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.1.3/lunr.min.js" defer></script><script type="text/javascript" src="/js/widgets/search.min.js" integrity="sha512-d/tTum6UX9Z0PBv62AjaeUBYXLBODfQ/IAIBIy/WCDxioKM8cY0e/eMyA3SbL2oSqZ1XjShtHkD3qJtSGwBeDQ==" defer></script>
+<script> 
+    var disqus_onload = false;
+    (function() { 
+      var d = document, s = d.createElement('script');
+  
+      s.src = 'https:\/\/ccybnumath-github-io.disqus.com\/embed.js'; s.async = true;
+  
+      s.setAttribute('data-timestamp', +new Date());
+      s.onload = function(){
+          disqus_onload = true;
+      };
+      s.onerror = function(){
+          disqus_onload = false;
+      };
+      (d.head || d.body).appendChild(s); 
+      setTimeout(function(){
+            if ( !disqus_onload ){
+                disqus_onload = true;
+                var mydiv = document.getElementById("disqus_thread");
+                var pnode = d.createElement('p');
+                pnode.innerHTML = 'Please get across the GFW to comment this article';
+                pnode.setAttribute('style', 'font-size:18px;color:red;text-align:center;');
+                mydiv.appendChild(pnode);
+            }
+        }, 5000); 
+    })();
+</script>
+<script type="text/javascript" src="/js/index.min.js" integrity="sha512-YtQNoHzM2e3Fogp&#43;RCYOYoBOzEIGHgvaTGNDrBnvwl47l195xvC1h4YbG9oAbREHMq&#43;Ed3Kx6NYT2xe6KNPGvg==" defer></script>
+        </div>
+    </body>
+</html>
