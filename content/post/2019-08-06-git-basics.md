@@ -7,6 +7,7 @@ categories:
   - linux
 tags:
   - git
+draft: true
 ---
 A great and easy understanding introduction to [git](https://rogerdudler.github.io/git-guide/index.html). Here are just my notes.
 
