@@ -5,8 +5,24 @@
     <description>Recent content in Home on Canyi Chen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 07 Aug 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 09 Aug 2019 00:00:00 +0000</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to move mediawiki from Ubuntu to WSL?</title>
+      <link>/post/how-to-move-mediawiki-from-ubuntu-to-wsl/</link>
+      <pubDate>Fri, 09 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/how-to-move-mediawiki-from-ubuntu-to-wsl/</guid>
+      <description>Problem How to move mediawiki from ubuntu to wsl?
+Solution Prerequisite  [wikifolder]: where your wiki locate [wikidb]: database wiki uses [wikidb_user]: user of database Assuming we have two servers:
+ Server 1
+[wikifolder]: /var/www/html [wikidb]: wikidb [wikidb_user]: root  Server 2
+[wikifolder]: /var/www/html [wikidb]: wikidb [wikidb_user]: wikiuser  php version consistency
+$ php --version PHP 7.0.33-10+ubuntu18.04.1+deb.sury.org+1 (cli) (built: Aug 7 2019 09:51:13) ( NTS ) Copyright (c) 1997-2017 The PHP Group Zend Engine v3.</description>
+    </item>
+    
     
     
     <item>
@@ -23,6 +39,18 @@ hugo server -D References https://bluestnight.com/guides/midnight/getting-starte
  https://themes.gohugo.io/theme/Midnight/
  https://gohugo.io/getting-started/quick-start/
   </description>
+    </item>
+    
+    
+    
+    <item>
+      <title>Hosting source code and generating static pages in Github</title>
+      <link>/post/blog-integrated-with-blogdown-hugo-rstudio-and-github-seamlessly/</link>
+      <pubDate>Tue, 06 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/blog-integrated-with-blogdown-hugo-rstudio-and-github-seamlessly/</guid>
+      <description> ##
+References </description>
     </item>
     
     
@@ -56,18 +84,6 @@ git branch show commitment history
 git log git log --graph Display with less
  Roll back
 # roll back one step git reset --hard HEAD~1 git add .</description>
-    </item>
-    
-    
-    
-    <item>
-      <title>Hosting source code and generating static pages in Github</title>
-      <link>/post/blog-integrated-with-blogdown-hugo-rstudio-and-github-seamlessly/</link>
-      <pubDate>Tue, 06 Aug 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/blog-integrated-with-blogdown-hugo-rstudio-and-github-seamlessly/</guid>
-      <description> ##
-References </description>
     </item>
     
     
