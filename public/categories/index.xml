@@ -6,10 +6,28 @@
     <description>Recent content in Categories on Canyi Chen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 09 Aug 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 12 Aug 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Learning PHP</title>
+      <link>/categories/learning-php/</link>
+      <pubDate>Mon, 12 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/learning-php/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MySQL &amp; JavaScript</title>
+      <link>/categories/mysql-javascript/</link>
+      <pubDate>Mon, 12 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/mysql-javascript/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>linux</title>
