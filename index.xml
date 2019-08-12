@@ -5,8 +5,21 @@
     <description>Recent content in Home on Canyi Chen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 09 Aug 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 12 Aug 2019 00:00:00 +0000</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Chapter 8. Introduction to MySQL</title>
+      <link>/post/chapter-8-introduction-to-mysql/</link>
+      <pubDate>Mon, 12 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/chapter-8-introduction-to-mysql/</guid>
+      <description>Creating a MySQL Database  login with user root
+sudo mysql -u root -p ; is used for ending commands
+  | Mysql prompt | Meaning | | &amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash; | &amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;- | | mysql&amp;gt; | Ready and waiting for a command | | -&amp;gt; | Waiting for the next line of a command | | &amp;lsquo;&amp;gt; | | | &amp;ldquo;&amp;gt; | | | `&amp;gt; | | | /&amp;gt; | Waiting for the next line for a comment started with / |</description>
+    </item>
+    
     
     
     <item>
