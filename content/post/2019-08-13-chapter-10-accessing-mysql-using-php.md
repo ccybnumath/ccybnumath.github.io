@@ -12,7 +12,7 @@ disable_comments: yes
 hide_authorbox: no
 ---
 
-```sql
+```php
 <?php
     require_once "login.php";
     $conn=new mysqli($hn,$un,$pw,$db);
