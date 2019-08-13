@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Chapter 10. Accessing MySQL Using PHP</title><meta name="description" itemprop="description" content="&amp;lt;?php require_once &amp;#34;login.php&amp;#34;; $conn=new mysqli($hn,$un,$pw,$db); if($conn-&amp;gt;connect_error) die(&amp;#34;Fatal error;&amp;#34;); if(isset($_POST[&amp;#39;delete&amp;#39;])&amp;amp;&amp;amp;isset($_POST[&amp;#39;isbn&amp;#39;])) { $isbn=get_post($conn,&amp;#39;isbn&amp;#39;); $query=&amp;#34;DELETE FROM classics WHERE isbn=&amp;#39;$isbn&amp;#39;&amp;#34;; $result=$conn-&amp;gt;query($query); if(!$result) die(&amp;#34;Fatal error;&amp;#34;); } if(isset($_POST[&amp;#39;author&amp;#39;])&amp;amp;&amp;amp; isset($_POST[&amp;#39;title&amp;#39;])&amp;amp;&amp;amp; isset($_POST[&amp;#39;category&amp;#39;])&amp;amp;&amp;amp; isset($_POST[&amp;#39;year&amp;#39;])&amp;amp;&amp;amp; isset($_POST[&amp;#39;isbn&amp;#39;])) { $author=get_post($conn,&amp;#39;author&amp;#39;); $title=get_post($conn,&amp;#39;title&amp;#39;); $category=get_post($conn,&amp;#39;category&amp;#39;); $year=get_post($conn,&amp;#39;year&amp;#39;); $isbn=get_post($conn,&amp;#39;isbn&amp;#39;); $query=&amp;#34;INSERT INTO classics VALUES&amp;#34; . &amp;#34;(&amp;#39;$author&amp;#39;,&amp;#39;$title&amp;#39;,&amp;#39;$category&amp;#39;,&amp;#39;$year&amp;#39;,&amp;#39;$isbn&amp;#39;)&amp;#34;; $result=$conn-&amp;gt;query($query); if(!$result) die(&amp;#34;Fatal error.&amp;#34;); } echo &amp;lt;&amp;lt;&amp;lt; _END &amp;lt;form action=&amp;#39;sqltest.php&amp;#39; method=&amp;#39;post&amp;#39;&amp;gt;&amp;lt;pre&amp;gt; Author &amp;lt;input type=&amp;#39;text&amp;#39; name=&amp;#39;author&amp;#39;&amp;gt; Title &amp;lt;input type=&amp;#39;text&amp;#39; name=&amp;#39;title&amp;#39;&amp;gt; Category &amp;lt;input type=&amp;#39;text&amp;#39; name=&amp;#39;category&amp;#39;&amp;gt; Year &amp;lt;input type=&amp;#39;text&amp;#39; name=&amp;#39;year&amp;#39;&amp;gt; ISBN &amp;lt;input type=&amp;#39;text&amp;#39; name=&amp;#39;isbn&amp;#39;&amp;gt; &amp;lt;input type=&amp;#39;submit&amp;#39; value=&amp;#39;ADD RECORD&amp;#39;&amp;gt; &amp;lt;/pre&amp;gt;&amp;lt;/form&amp;gt; _END; $query=&amp;#39;SELECT * FROM classics&amp;#39;; $result=$conn-&amp;gt;query($query); if(!" id="desc"><meta name="generator" content="Hugo 0.56.3" /><meta name="keywords" itemprop="keywords" content="php,mysql" id="keywords"><link rel="canonical" href="/post/chapter-10-accessing-mysql-using-php/">
+        
+
+<meta name="thumbnail" content="/images/thumbnail.png" /><link rel="dns-prefetch" href="https://use.fontawesome.com/" />
+<link rel="preconnect" href="https://use.fontawesome.com/" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+
+
+
+<link rel="stylesheet" href="/css/foundation.min.css" integrity="sha512-Rd0Ui3eNZsRTe4UNVA+6WeU5VwpGAqqd/+xTbWI/T/OmcYqnrNWfJC02AjPbt5TuDGA3l4SFJdTH91QPP3vAFg==">
+  <link rel="stylesheet" href="/css/dark.min.css" integrity="sha512-gQpDgduBgmlAz6RR6+MVgbcrPEu+langkA9ngZtIrAjV8Hwcno+rUvaRjfUrzceGtO+gpoCAm4fLeMuAd/5v7Q=="><link rel="stylesheet" href="/styles.css" >
+    <link rel="stylesheet" href="/css/reset.min.css" integrity="sha512-xwmF/g6mhf+NqX9hnHhGV+cKVithh9ncEOreDW6jZXIqMiqsX5sxvVZXYuzz+8jLI7+wPFr/2/sg2x8Pp0a1VA=="><link rel="stylesheet" href="/css/fonts.min.css" integrity="sha512-xROhFE8XAZAs3OvW3/LUg6jCH7LgsxPMimBO/cpzYV7EgJgY5hbDX9rHqaOG5VrAv52NMXFuHiQ4xqnSgFvmqQ=="><link rel="stylesheet" href="/css/classes.min.css" integrity="sha512-VtHTX2MGmhT+/gSeNEwz2TD+OEFpz9G9AUjHc9mAjEgneeX2RiJphzfxqHrU+7afnuHkTkwMtY4hP5XAJCZ8eA=="><link rel="stylesheet" href="/css/pagination.min.css" integrity="sha512-exBmcmBqVqp5QRaF99l0MQPpD6X4/7RMJa9KY4pv/SP9R31qyqwuAIcPXZPm5jn7EMDVdviT45APg0RBfBA3Ow=="><link rel="stylesheet" href="/css/page.min.css" integrity="sha512-Eqq5awgR8Hau+25mfXATwps47CVesfD4jrw/QozL3eib52HmmlFnvxsERXuGCVQH1S1FSaQD/oycWN/WyGE5Aw=="><link rel="stylesheet" href="/css/widgets.min.css" integrity="sha512-KkbwfnV4akqRv+GVWIAa0UazaiDzkMev+Iq6AkHnzvOhQnb9tJnZwHySGGBjfwH3LOmMuaXl7an5uR36EuftaQ==">
+    <link rel="stylesheet" href="/css/single.min.css" integrity="sha512-Q1Zy+J4r0j/8Mjf7DVoh6X/Q1gWZqmvMf5IX7vxV7k97/NLY5novAjHRMReD9WWrDOq54t3sHsR7i8HwXlumlg==">
+
+
+
+    
+    
+        <link rel="stylesheet" href="/css/forms.min.css" integrity="sha512-HFLITUp3WlAxFTDsGCwrGbp6HMCuilYVDQcMoKPfp/vVfBZHlIUxf1PjVr7Pbe2HG6PudC3LPj1HrpwU4lCtLw==">
+    
+    
+    
+<link rel="preload" media="print" type="text/css" href="/css/print.min.2e0961e511885e38a09cc9a9ff3de5ce7d7d2186bb9ed98a61f176688d4ef61a.css" integrity="sha256-Lglh5RGIXjignMmp/z3lzn19IYa7ntmKYfF2aI1O9ho=" as="style"><link rel="dns-prefetch" href="https://cdnjs.cloudflare.com/" />
+<link rel="preconnect" href="https://cdnjs.cloudflare.com/" />
+
+<link rel="preload" href="/index.json" as="fetch" />
+
+<link rel="stylesheet" href="/css/widgets/search.min.css" integrity="sha512-7Otnz4Nae1tx47YRSs6kqu108FeNUGViWaATAkZTN2g/kps4bOyu+ukQwTyPMnZBM2U9epLm+YXnArC+I+UMgA==">
+<link rel="stylesheet" href="/css/widgets/taglist.min.css" integrity="sha512-0mtvLycPchph/Kw1OcdI3KmQ5qi8oOdiS35lFD+pNcEPTQ6rmiMAF9dztJkhsuuQsAuXADQCj2gC/O+axKh/Pw==">
+
+    <meta name="theme-color" content="#2073c9">
+    <meta name="apple-mobile-web-app-title" content="Canyi Chen">
+    <meta name="application-name" content="Canyi Chen">
+
+    </head>
+    <body itemscope itemtype="http://schema.org/WebPage">
+        <div class="off-canvas-wrapper">
+            <button id="off-canvas-toggle" type="button" class="button hide-for-medium" aria-label="Open Menu" data-toggle="main-nav-off-canvas">
+                <span class="fas fa-bars"></span>
+            </button>
+            <div class="off-canvas position-left" id="main-nav-off-canvas" data-off-canvas>
+                <nav>
+                    <ul class="vertical menu drilldown" data-drilldown><li itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <a class="main-nav button" tabindex="0" href="/post/" >
+            POSTS
+        </a></li><li itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <a class="main-nav button" tabindex="0" href="/research/" >
+            RESEARCH
+        </a></li><li itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <a class="main-nav button" tabindex="0" href="/resource/" >
+            RESOURCE
+        </a></li><li itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <a class="main-nav button" tabindex="0" href="/link/" >
+            LINKS
+        </a></li><li itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <a class="main-nav button" tabindex="0" href="/about/" >
+            ABOUT
+        </a></li></ul>
+                </nav>
+            </div>
+        <div id="site-container" class="grid-container full off-canvas-content">
+                <div class="grid-x full grid-container data-off-canvas-content">
+                    <div id="site-header" class="cell">
+                        <a href="/">
+                            <header class="small-text-left medium-text-left grid-x">
+                                <img id="site-thumbnail" class="cell shrink" src="/images/thumbnail.png" data-width="93">
+                                <div id="site-title-container" class="cell shrink grid-y">
+                                    <div id="site-title" class="cell shrink" itemprop="name">Canyi Chen</div>
+                                    <div class="cell shrink" id="site-tagline">Using R&amp;Python</div>
+                                </div>
+                            </header>
+                        </a>
+                        <nav id="main-nav" class="small-hide">
+                          <ul class="dropdown menu" data-dropdown-menu><li itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <a class="main-nav button" tabindex="0" href="/post/" >
+            POSTS
+        </a></li><li itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <a class="main-nav button" tabindex="0" href="/research/" >
+            RESEARCH
+        </a></li><li itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <a class="main-nav button" tabindex="0" href="/resource/" >
+            RESOURCE
+        </a></li><li itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <a class="main-nav button" tabindex="0" href="/link/" >
+            LINKS
+        </a></li><li itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <a class="main-nav button" tabindex="0" href="/about/" >
+            ABOUT
+        </a></li></ul>
+                        </nav>
+                        </div>
+                    <div id="main-container" class="cell grid-x grid-padding-x grid-container" role="main" itemprop="mainContentOfPage">
+                        
+                        
+                        
+                        
+                        
+                        
+<main class="cell medium-8" >
+    <article id="post-article" itemscope itemtype="http://schema.org/Article" itemref="keywords desc">
+        <header id="page-header">
+            <h1 itemprop="headline">Chapter 10. Accessing MySQL Using PHP</h1><p id="post-metadata" class="grid-x grid-padding-x"><span class="cell shrink">
+                        <span class="far fa-clock fa-sm fa-fw" aria-hidden></span>
+                        <strong>Published:</strong>
+                        <time datetime="2019-08-13" content="2019-08-13" itemprop="datePublished">August 13, 2019</time>
+                    </span><span class="cell shrink">
+                        <span class="fas fa-folder fa-sm fa-fw" aria-hidden></span>
+                        <span class="sr-text">Category: </span>
+                        
+                        <a href="/categories/mysql-javascript" rel="category">My S Q L &amp; Java Script</a>
+                    </span><span class="cell shrink">
+                        <span class="fas fa-book fa-sm fa-fw" aria-hidden></span>
+                        <strong>Estimated Reading Time:</strong>
+                        ~<span itemprop="timeRequired">1 minute</span>
+                    </span><span class="cell shrink">
+                        <span class="fas fa-tags fa-sm fa-fw" aria-hidden></span>
+                            
+                            
+                            <a itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL" href="/tags/php" rel="tag" itemprop="url">php</a>
+                        
+                            
+                            
+                            <a itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL" href="/tags/mysql" rel="tag" itemprop="url">mysql</a>
+                        </span></p>
+            
+        </header>
+        
+        <div id="post-content"><span itemprop="articleBody"><div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql"><span class="o">&lt;?</span><span class="n">php</span>
+    <span class="n">require_once</span> <span class="s2">&#34;login.php&#34;</span><span class="p">;</span>
+    <span class="err">$</span><span class="n">conn</span><span class="o">=</span><span class="k">new</span> <span class="n">mysqli</span><span class="p">(</span><span class="err">$</span><span class="n">hn</span><span class="p">,</span><span class="err">$</span><span class="n">un</span><span class="p">,</span><span class="err">$</span><span class="n">pw</span><span class="p">,</span><span class="err">$</span><span class="n">db</span><span class="p">);</span>
+    <span class="k">if</span><span class="p">(</span><span class="err">$</span><span class="n">conn</span><span class="o">-&gt;</span><span class="n">connect_error</span><span class="p">)</span> <span class="n">die</span><span class="p">(</span><span class="s2">&#34;Fatal error;&#34;</span><span class="p">);</span>
+
+    <span class="k">if</span><span class="p">(</span><span class="n">isset</span><span class="p">(</span><span class="err">$</span><span class="n">_POST</span><span class="p">[</span><span class="s1">&#39;delete&#39;</span><span class="p">])</span><span class="o">&amp;&amp;</span><span class="n">isset</span><span class="p">(</span><span class="err">$</span><span class="n">_POST</span><span class="p">[</span><span class="s1">&#39;isbn&#39;</span><span class="p">]))</span>
+    <span class="err">{</span>
+        <span class="err">$</span><span class="n">isbn</span><span class="o">=</span><span class="n">get_post</span><span class="p">(</span><span class="err">$</span><span class="n">conn</span><span class="p">,</span><span class="s1">&#39;isbn&#39;</span><span class="p">);</span>
+        <span class="err">$</span><span class="n">query</span><span class="o">=</span><span class="s2">&#34;DELETE FROM classics WHERE isbn=&#39;$isbn&#39;&#34;</span><span class="p">;</span>
+        <span class="err">$</span><span class="k">result</span><span class="o">=</span><span class="err">$</span><span class="n">conn</span><span class="o">-&gt;</span><span class="n">query</span><span class="p">(</span><span class="err">$</span><span class="n">query</span><span class="p">);</span>
+        <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="err">$</span><span class="k">result</span><span class="p">)</span> <span class="n">die</span><span class="p">(</span><span class="s2">&#34;Fatal error;&#34;</span><span class="p">);</span>
+
+    <span class="err">}</span>
+
+    <span class="k">if</span><span class="p">(</span><span class="n">isset</span><span class="p">(</span><span class="err">$</span><span class="n">_POST</span><span class="p">[</span><span class="s1">&#39;author&#39;</span><span class="p">])</span><span class="o">&amp;&amp;</span>  
+    <span class="n">isset</span><span class="p">(</span><span class="err">$</span><span class="n">_POST</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">])</span><span class="o">&amp;&amp;</span>
+    <span class="n">isset</span><span class="p">(</span><span class="err">$</span><span class="n">_POST</span><span class="p">[</span><span class="s1">&#39;category&#39;</span><span class="p">])</span><span class="o">&amp;&amp;</span>
+    <span class="n">isset</span><span class="p">(</span><span class="err">$</span><span class="n">_POST</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">])</span><span class="o">&amp;&amp;</span>
+    <span class="n">isset</span><span class="p">(</span><span class="err">$</span><span class="n">_POST</span><span class="p">[</span><span class="s1">&#39;isbn&#39;</span><span class="p">]))</span>
+    <span class="err">{</span>
+        <span class="err">$</span><span class="n">author</span><span class="o">=</span><span class="n">get_post</span><span class="p">(</span><span class="err">$</span><span class="n">conn</span><span class="p">,</span><span class="s1">&#39;author&#39;</span><span class="p">);</span>
+        <span class="err">$</span><span class="n">title</span><span class="o">=</span><span class="n">get_post</span><span class="p">(</span><span class="err">$</span><span class="n">conn</span><span class="p">,</span><span class="s1">&#39;title&#39;</span><span class="p">);</span>
+        <span class="err">$</span><span class="n">category</span><span class="o">=</span><span class="n">get_post</span><span class="p">(</span><span class="err">$</span><span class="n">conn</span><span class="p">,</span><span class="s1">&#39;category&#39;</span><span class="p">);</span>
+        <span class="err">$</span><span class="k">year</span><span class="o">=</span><span class="n">get_post</span><span class="p">(</span><span class="err">$</span><span class="n">conn</span><span class="p">,</span><span class="s1">&#39;year&#39;</span><span class="p">);</span>
+        <span class="err">$</span><span class="n">isbn</span><span class="o">=</span><span class="n">get_post</span><span class="p">(</span><span class="err">$</span><span class="n">conn</span><span class="p">,</span><span class="s1">&#39;isbn&#39;</span><span class="p">);</span>
+        <span class="err">$</span><span class="n">query</span><span class="o">=</span><span class="s2">&#34;INSERT INTO classics VALUES&#34;</span> <span class="p">.</span> <span class="s2">&#34;(&#39;$author&#39;,&#39;$title&#39;,&#39;$category&#39;,&#39;$year&#39;,&#39;$isbn&#39;)&#34;</span><span class="p">;</span>
+        <span class="err">$</span><span class="k">result</span><span class="o">=</span><span class="err">$</span><span class="n">conn</span><span class="o">-&gt;</span><span class="n">query</span><span class="p">(</span><span class="err">$</span><span class="n">query</span><span class="p">);</span>
+        <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="err">$</span><span class="k">result</span><span class="p">)</span> <span class="n">die</span><span class="p">(</span><span class="s2">&#34;Fatal error.&#34;</span><span class="p">);</span>
+    <span class="err">}</span>
+<span class="n">echo</span> <span class="o">&lt;&lt;&lt;</span> <span class="n">_END</span>
+<span class="o">&lt;</span><span class="n">form</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;sqltest.php&#39;</span> <span class="k">method</span><span class="o">=</span><span class="s1">&#39;post&#39;</span><span class="o">&gt;&lt;</span><span class="n">pre</span><span class="o">&gt;</span>
+<span class="n">Author</span>   <span class="o">&lt;</span><span class="k">input</span> <span class="k">type</span><span class="o">=</span><span class="s1">&#39;text&#39;</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;author&#39;</span><span class="o">&gt;</span>
+<span class="n">Title</span>    <span class="o">&lt;</span><span class="k">input</span> <span class="k">type</span><span class="o">=</span><span class="s1">&#39;text&#39;</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;title&#39;</span><span class="o">&gt;</span>
+<span class="n">Category</span> <span class="o">&lt;</span><span class="k">input</span> <span class="k">type</span><span class="o">=</span><span class="s1">&#39;text&#39;</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;category&#39;</span><span class="o">&gt;</span>
+<span class="k">Year</span>     <span class="o">&lt;</span><span class="k">input</span> <span class="k">type</span><span class="o">=</span><span class="s1">&#39;text&#39;</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;year&#39;</span><span class="o">&gt;</span>
+<span class="n">ISBN</span>     <span class="o">&lt;</span><span class="k">input</span> <span class="k">type</span><span class="o">=</span><span class="s1">&#39;text&#39;</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;isbn&#39;</span><span class="o">&gt;</span>
+         <span class="o">&lt;</span><span class="k">input</span> <span class="k">type</span><span class="o">=</span><span class="s1">&#39;submit&#39;</span> <span class="n">value</span><span class="o">=</span><span class="s1">&#39;ADD RECORD&#39;</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">pre</span><span class="o">&gt;&lt;/</span><span class="n">form</span><span class="o">&gt;</span>
+<span class="n">_END</span><span class="p">;</span>
+
+<span class="err">$</span><span class="n">query</span><span class="o">=</span><span class="s1">&#39;SELECT * FROM classics&#39;</span><span class="p">;</span>
+<span class="err">$</span><span class="k">result</span><span class="o">=</span><span class="err">$</span><span class="n">conn</span><span class="o">-&gt;</span><span class="n">query</span><span class="p">(</span><span class="err">$</span><span class="n">query</span><span class="p">);</span>
+<span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="err">$</span><span class="k">result</span><span class="p">)</span> <span class="n">die</span><span class="p">(</span><span class="s2">&#34;Fatal error.&#34;</span><span class="p">);</span>
+
+<span class="err">$</span><span class="k">rows</span><span class="o">=</span><span class="err">$</span><span class="k">result</span><span class="o">-&gt;</span><span class="n">num_rows</span><span class="p">;</span>
+
+<span class="k">for</span><span class="p">(</span><span class="err">$</span><span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="err">$</span><span class="n">j</span><span class="o">&lt;</span><span class="err">$</span><span class="k">rows</span><span class="p">;</span><span class="o">++</span><span class="err">$</span><span class="n">j</span><span class="p">)</span>
+<span class="err">{</span>
+    <span class="err">$</span><span class="k">row</span><span class="o">=</span><span class="err">$</span><span class="k">result</span><span class="o">-&gt;</span><span class="n">fetch_array</span><span class="p">(</span><span class="n">MYSQLI_NUM</span><span class="p">);</span>
+    <span class="err">$</span><span class="n">r0</span><span class="o">=</span><span class="n">htmlspecialchars</span><span class="p">(</span><span class="err">$</span><span class="k">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+    <span class="err">$</span><span class="n">r1</span> <span class="o">=</span> <span class="n">htmlspecialchars</span><span class="p">(</span><span class="err">$</span><span class="k">row</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+    <span class="err">$</span><span class="n">r2</span> <span class="o">=</span> <span class="n">htmlspecialchars</span><span class="p">(</span><span class="err">$</span><span class="k">row</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+    <span class="err">$</span><span class="n">r3</span> <span class="o">=</span> <span class="n">htmlspecialchars</span><span class="p">(</span><span class="err">$</span><span class="k">row</span><span class="p">[</span><span class="mi">3</span><span class="p">]);</span>
+    <span class="err">$</span><span class="n">r4</span> <span class="o">=</span> <span class="n">htmlspecialchars</span><span class="p">(</span><span class="err">$</span><span class="k">row</span><span class="p">[</span><span class="mi">4</span><span class="p">]);</span>
+
+<span class="n">echo</span> <span class="o">&lt;&lt;&lt;</span> <span class="n">_END</span>
+<span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;</span>
+<span class="n">Author</span> <span class="err">$</span><span class="n">r0</span>
+<span class="n">Title</span> <span class="err">$</span><span class="n">r1</span>
+<span class="n">Category</span> <span class="err">$</span><span class="n">r2</span>
+<span class="k">Year</span> <span class="err">$</span><span class="n">r3</span>
+<span class="n">ISBN</span> <span class="err">$</span><span class="n">r4</span>
+<span class="o">&lt;</span><span class="n">form</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;sqltest.php&#39;</span> <span class="k">method</span><span class="o">=</span><span class="s1">&#39;post&#39;</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="k">input</span> <span class="k">type</span><span class="o">=</span><span class="s1">&#39;hidden&#39;</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;delete&#39;</span> <span class="n">value</span><span class="o">=</span><span class="s1">&#39;yes&#39;</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="k">input</span> <span class="k">type</span><span class="o">=</span><span class="s1">&#39;hidden&#39;</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;isbn&#39;</span> <span class="n">value</span><span class="o">=</span><span class="s1">&#39;$r4&#39;</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="k">input</span> <span class="k">type</span><span class="o">=</span><span class="s1">&#39;submit&#39;</span> <span class="n">value</span><span class="o">=</span><span class="s1">&#39;DELETE RECORD&#39;</span><span class="o">&gt;&lt;/</span><span class="n">form</span><span class="o">&gt;</span>
+<span class="n">_END</span><span class="p">;</span>
+<span class="err">}</span>
+<span class="err">$</span><span class="k">result</span><span class="o">-&gt;</span><span class="k">close</span><span class="p">();</span>
+<span class="err">$</span><span class="n">conn</span><span class="o">-&gt;</span><span class="k">close</span><span class="p">();</span>
+
+    <span class="k">function</span> <span class="n">get_post</span><span class="p">(</span><span class="err">$</span><span class="n">conn</span><span class="p">,</span><span class="err">$</span><span class="n">var</span><span class="p">)</span>
+    <span class="err">{</span>
+        <span class="k">return</span> <span class="err">$</span><span class="n">conn</span><span class="o">-&gt;</span><span class="n">real_escape_string</span><span class="p">(</span><span class="err">$</span><span class="n">_POST</span><span class="p">[</span><span class="err">$</span><span class="n">var</span><span class="p">]);</span>
+    <span class="err">}</span>
+    <span class="k">function</span> <span class="n">mysql_entities_fix_string</span><span class="p">(</span><span class="err">$</span><span class="n">conn</span><span class="p">,</span> <span class="err">$</span><span class="n">string</span><span class="p">)</span>
+    <span class="err">{</span>
+    <span class="k">return</span> <span class="n">htmlentities</span><span class="p">(</span><span class="n">mysql_fix_string</span><span class="p">(</span><span class="err">$</span><span class="n">conn</span><span class="p">,</span> <span class="err">$</span><span class="n">string</span><span class="p">));</span>
+    <span class="err">}</span>
+    <span class="k">function</span> <span class="n">mysql_fix_string</span><span class="p">(</span><span class="err">$</span><span class="n">conn</span><span class="p">,</span> <span class="err">$</span><span class="n">string</span><span class="p">)</span>
+    <span class="err">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">get_magic_quotes_gpc</span><span class="p">())</span> <span class="err">$</span><span class="n">string</span> <span class="o">=</span> <span class="n">stripslashes</span><span class="p">(</span><span class="err">$</span><span class="n">string</span><span class="p">);</span>
+    <span class="k">return</span> <span class="err">$</span><span class="n">conn</span><span class="o">-&gt;</span><span class="n">real_escape_string</span><span class="p">(</span><span class="err">$</span><span class="n">string</span><span class="p">);</span>
+<span class="err">}</span>
+<span class="o">?&gt;</span></code></pre></div>
+</span>
+        </div></article>
+
+    <nav id="post-nav" aria-label="Pagination">
+            <ul class="pagination grid-x grid-x-padding full">
+                
+                <li class="pagination-previous cell small-order-2 medium-5 medium-order-1">
+                    <a class="button" href="/post/chapter-8-introduction-to-mysql/" rel="prev">
+                        <span class="sr-text">Previous:</span>
+                        Chapter 8. Introduction to MySQL</a>
+                </li>
+                
+                
+            </ul>
+        </nav>
+
+    
+</main>
+
+                        <aside class="cell small-12 small-order-2 medium-4" itemscope itemtype="http://schema.org/WPSideBar"><div class="widget" id="search-container">
+    <header>
+        <span class="widget-header"><span class="fas fa-search fa-xs" aria-hidden></span> Search</span>
+    </header>
+    <input type="search" name="search" id="searchbox" placeholder="Search..." autocomplete="off"/>
+    <div id="search-results" class="grid-y hide"></div>
+</div>
+<div class="widget">
+    
+    
+        
+    
+
+    
+        
+            
+        
+	
+	<header>
+		<span class="widget-header"><span class="fas fa-pencil-alt fa-xs" aria-hidden></span> <a href="/post/">Recent Posts</a></span>
+	</header>
+	
+			<a class="widget-header-small button" href="/index.xml"><span class="fas fa-rss fa-xs" aria-hidden></span> Subscribe to the Site</a>
+		<ul><li><a href="/post/chapter-10-accessing-mysql-using-php/">Chapter 10. Accessing MySQL Using PHP</a></li><li><a href="/post/chapter-8-introduction-to-mysql/">Chapter 8. Introduction to MySQL</a></li><li><a href="/post/how-to-move-mediawiki-from-ubuntu-to-wsl/">How to move mediawiki from Ubuntu to WSL?</a></li><li><a href="/post/install-hugo-theme-midnight-https-bluestnight-com-guides-midnight-getting-started/">Install Hugo &amp; Theme Midnight</a></li><li><a href="/post/blog-integrated-with-blogdown-hugo-rstudio-and-github-seamlessly/">Hosting source code and generating static pages in Github</a></li><li><a href="/post/prefix-bash-code-with-using-awk/">Prefix bash code with $ using `awk`</a></li><li><a href="/post/11the-environment/">11The Environment</a></li><li><a href="/post/2015-07-23-r-rmarkdown/">Hello R Markdown</a></li><li><a href="/post/goisforlovers/">(Hu)go Template Primer</a></li></ul>
+</div>
+<div class="widget">
+	<header>
+		<span class="widget-header">
+			<span class="fas fa-folder fa-xs" aria-hidden></span>
+            <a href="/categories/">Categories</a>
+        </span>
+	</header>
+	<ul><li>
+            <a href="/categories/linux/">
+                Linux
+            </a>
+        </li>
+		<li>
+            <a href="/categories/development/">
+                Development
+            </a>
+        </li>
+		<li>
+            <a href="/categories/golang/">
+                Golang
+            </a>
+        </li>
+		<li>
+            <a href="/categories/mysql-javascript/">
+                Mysql Javascript
+            </a>
+        </li>
+		<li>
+            <a href="/categories/learning-php/">
+                Learning Php
+            </a>
+        </li>
+		
+	</ul>
+</div>
+<div class="widget">
+	<header>
+		<span class="widget-header"><span class="fas fa-tags fa-xs" aria-hidden></span> <a href="/tags/">Tags</a></span>
+	</header>
+	<div class="grid-x grid-padding-x" id="sidebar-tags"><a class="cell shrink" href="/tags/mysql/" title="mysql">
+                mysql
+			</a><a class="cell shrink" href="/tags/development/" title="development">
+                development
+			</a><a class="cell shrink" href="/tags/go/" title="go">
+                go
+			</a><a class="cell shrink" href="/tags/golang/" title="golang">
+                golang
+			</a><a class="cell shrink" href="/tags/hugo/" title="hugo">
+                hugo
+			</a><a class="cell shrink" href="/tags/php/" title="php">
+                php
+			</a><a class="cell shrink" href="/tags/apache2/" title="apache2">
+                apache2
+			</a><a class="cell shrink" href="/tags/awk/" title="awk">
+                awk
+			</a><a class="cell shrink" href="/tags/blogdown/" title="blogdown">
+                blogdown
+			</a><a class="cell shrink" href="/tags/github/" title="github">
+                github
+			</a><a class="cell shrink" href="/tags/mediawiki/" title="mediawiki">
+                mediawiki
+			</a><a class="cell shrink" href="/tags/plot/" title="plot">
+                plot
+			</a><a class="cell shrink" href="/tags/r-markdown/" title="r markdown">
+                r markdown
+			</a><a class="cell shrink" href="/tags/regression/" title="regression">
+                regression
+			</a><a class="cell shrink" href="/tags/templates/" title="templates">
+                templates
+			</a><a class="cell shrink" href="/tags/themes/" title="themes">
+                themes
+			</a></div>
+</div>
+</aside>
+
+                    </div>
+                    <footer class="cell grid-x full align-middle">
+    <div class="cell medium-4 small-text-center medium-text-left medium-left small-order-1 grid-x">
+        <div class="cell">
+            <small>
+                &copy; 2019
+                <span itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                    <span itemprop="name">
+                        Canyi Chen.
+                    </span>
+                </span>
+            </small>
+        </div>
+        <div class="cell">
+            <small>
+                Built with <a href="https://gohugo.io">Hugo</a> and <a href="https://bluestnight.com/products/midnight/">Midnight</a>.
+            </small>
+        </div>
+        
+    </div>
+    <div class="cell medium-4 small-text-center medium-text-center small-order-2 grid-x">
+        
+        <div class="cell small-full small-text-center grid-x">
+            
+            
+            
+        </div>
+    </div>
+    <div id="social-icons" class="grid-x cell medium-4 small-text-center small-order-3 medium-text-right">
+
+
+
+
+<a href="mailto:chency1997@ruc.edu.cn?subject=&amp;cc=ccy199705@gmail.com&amp;body=" class="cell shrink" rel="me nofollow" title="Email" aria-title="Send me an email!">
+
+    <span class="fa-stack fa-xs">
+        <span class="fas fa-square fa-stack-2x"></span>
+        <span class="fas fa-envelope fa-stack-1x fa-inverse"></span>
+    </span>
+
+</a>
+
+
+
+
+
+
+
+
+
+
+<a href="https://github.com/ccybnumath/ccybnumath.github.io" class="cell shrink" rel="me nofollow" title="GitHub" aria-title="Fork me on GitHub!">
+
+    <span class="fa-stack fa-xs">
+        <span class="fas fa-square fa-stack-2x"></span>
+        <span class="fab fa-github fa-stack-1x fa-inverse"></span>
+    </span>
+
+</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</footer>
+
+                </div>
+            </div>
+            
+<script type="text/javascript" src="/js/iubenda.min.js" integrity="sha512-z4PhNX7vuL3xVChQ1m2AB9Yg5AULVxXcg/SpIdNs6c5H0NE8XYXysP&#43;DGNKHfuwvY7kxvUdBeoGlODJ6&#43;SfaPg=="></script>
+
+<script type="text/javascript" src="/js/jquery.slim.min.js" integrity="sha512-Vh3gVmRI2jSBsal9/runMkMofsFtK8Y853PR0gU05T7GALp&#43;LkR&#43;7eJVOEfLccmsW6YPcJZttDIy6At3hyfk3g==" defer></script><script type="text/javascript" src="/js/foundation.min.js" integrity="sha512-xk8mY&#43;d42YkkVC6T2d6aO7SczKKDotCA3sZk1/gY0/QCzFrp8UNt&#43;x03xSnVS0mJUfmLH2QTzEZ2dN9&#43;XNIy0w==" defer></script><script type="text/javascript" src="/js/thumbnail.min.js" integrity="sha512-uNl2h75OUmzThaBo7EMkHEjys8w9EtYpRZ/q5S3kjiqewZ9lAKf5jeW9Y3yXi/aD08M7mvq7VVHZZL5KBk0gXg==" defer></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.1.3/lunr.min.js" defer></script><script type="text/javascript" src="/js/widgets/search.min.js" integrity="sha512-d/tTum6UX9Z0PBv62AjaeUBYXLBODfQ/IAIBIy/WCDxioKM8cY0e/eMyA3SbL2oSqZ1XjShtHkD3qJtSGwBeDQ==" defer></script><script type="text/javascript" src="/js/index.min.js" integrity="sha512-YtQNoHzM2e3Fogp&#43;RCYOYoBOzEIGHgvaTGNDrBnvwl47l195xvC1h4YbG9oAbREHMq&#43;Ed3Kx6NYT2xe6KNPGvg==" defer></script>
+        </div>
+    </body>
+</html>
