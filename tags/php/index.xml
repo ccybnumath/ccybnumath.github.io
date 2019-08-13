@@ -6,10 +6,19 @@
     <description>Recent content in php on Canyi Chen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 09 Aug 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 13 Aug 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/php/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Chapter 10. Accessing MySQL Using PHP</title>
+      <link>/post/chapter-10-accessing-mysql-using-php/</link>
+      <pubDate>Tue, 13 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/chapter-10-accessing-mysql-using-php/</guid>
+      <description>&amp;lt;?php require_once &amp;#34;login.php&amp;#34;; $conn=new mysqli($hn,$un,$pw,$db); if($conn-&amp;gt;connect_error) die(&amp;#34;Fatal error;&amp;#34;); if(isset($_POST[&amp;#39;delete&amp;#39;])&amp;amp;&amp;amp;isset($_POST[&amp;#39;isbn&amp;#39;])) { $isbn=get_post($conn,&amp;#39;isbn&amp;#39;); $query=&amp;#34;DELETE FROM classics WHERE isbn=&amp;#39;$isbn&amp;#39;&amp;#34;; $result=$conn-&amp;gt;query($query); if(!$result) die(&amp;#34;Fatal error;&amp;#34;); } if(isset($_POST[&amp;#39;author&amp;#39;])&amp;amp;&amp;amp; isset($_POST[&amp;#39;title&amp;#39;])&amp;amp;&amp;amp; isset($_POST[&amp;#39;category&amp;#39;])&amp;amp;&amp;amp; isset($_POST[&amp;#39;year&amp;#39;])&amp;amp;&amp;amp; isset($_POST[&amp;#39;isbn&amp;#39;])) { $author=get_post($conn,&amp;#39;author&amp;#39;); $title=get_post($conn,&amp;#39;title&amp;#39;); $category=get_post($conn,&amp;#39;category&amp;#39;); $year=get_post($conn,&amp;#39;year&amp;#39;); $isbn=get_post($conn,&amp;#39;isbn&amp;#39;); $query=&amp;#34;INSERT INTO classics VALUES&amp;#34; . &amp;#34;(&amp;#39;$author&amp;#39;,&amp;#39;$title&amp;#39;,&amp;#39;$category&amp;#39;,&amp;#39;$year&amp;#39;,&amp;#39;$isbn&amp;#39;)&amp;#34;; $result=$conn-&amp;gt;query($query); if(!$result) die(&amp;#34;Fatal error.&amp;#34;); } echo &amp;lt;&amp;lt;&amp;lt; _END &amp;lt;form action=&amp;#39;sqltest.php&amp;#39; method=&amp;#39;post&amp;#39;&amp;gt;&amp;lt;pre&amp;gt; Author &amp;lt;input type=&amp;#39;text&amp;#39; name=&amp;#39;author&amp;#39;&amp;gt; Title &amp;lt;input type=&amp;#39;text&amp;#39; name=&amp;#39;title&amp;#39;&amp;gt; Category &amp;lt;input type=&amp;#39;text&amp;#39; name=&amp;#39;category&amp;#39;&amp;gt; Year &amp;lt;input type=&amp;#39;text&amp;#39; name=&amp;#39;year&amp;#39;&amp;gt; ISBN &amp;lt;input type=&amp;#39;text&amp;#39; name=&amp;#39;isbn&amp;#39;&amp;gt; &amp;lt;input type=&amp;#39;submit&amp;#39; value=&amp;#39;ADD RECORD&amp;#39;&amp;gt; &amp;lt;/pre&amp;gt;&amp;lt;/form&amp;gt; _END; $query=&amp;#39;SELECT * FROM classics&amp;#39;; $result=$conn-&amp;gt;query($query); if(!</description>
+    </item>
     
     <item>
       <title>How to move mediawiki from Ubuntu to WSL?</title>

@@ -42,24 +42,6 @@ hugo server -D References https://bluestnight.com/guides/midnight/getting-starte
     </item>
     
     <item>
-      <title>Git basics</title>
-      <link>/post/git-basics/</link>
-      <pubDate>Tue, 06 Aug 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/git-basics/</guid>
-      <description>A great and easy understanding introduction to git. Here are just my notes.
- force pushing
-git push -u origin master -f Create new branch
-git checkout -b src switch branch
-git checkout src Branch src has already existed.
- show all branches
-git branch show commitment history
-git log git log --graph Display with less
- Roll back
-# roll back one step git reset --hard HEAD~1 git add .</description>
-    </item>
-    
-    <item>
       <title>Prefix bash code with $ using `awk`</title>
       <link>/post/prefix-bash-code-with-using-awk/</link>
       <pubDate>Tue, 06 Aug 2019 00:00:00 +0000</pubDate>

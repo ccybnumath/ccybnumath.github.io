@@ -4,7 +4,7 @@
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2019-08-12T00:00:00+00:00</lastmod>
+    <lastmod>2019-08-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -26,7 +26,41 @@
   
   <url>
     <loc>/categories/</loc>
-    <lastmod>2019-08-12T00:00:00+00:00</lastmod>
+    <lastmod>2019-08-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/post/chapter-10-accessing-mysql-using-php/</loc>
+    <lastmod>2019-08-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2019-08-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/mysql-javascript/</loc>
+    <lastmod>2019-08-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2019-08-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/mysql/</loc>
+    <lastmod>2019-08-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/php/</loc>
+    <lastmod>2019-08-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -36,30 +70,7 @@
   </url>
   
   <url>
-    <loc>/</loc>
-    <lastmod>2019-08-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/categories/learning-php/</loc>
-    <lastmod>2019-08-12T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/mysql-javascript/</loc>
-    <lastmod>2019-08-12T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
-    <lastmod>2019-08-12T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/mysql/</loc>
     <lastmod>2019-08-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -88,12 +99,6 @@
   </url>
   
   <url>
-    <loc>/tags/php/</loc>
-    <lastmod>2019-08-09T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/categories/wsl/</loc>
     <lastmod>2019-08-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -108,11 +113,6 @@
     <loc>/tags/hugo/</loc>
     <lastmod>2019-08-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/post/git-basics/</loc>
-    <lastmod>2019-08-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -139,12 +139,6 @@
   
   <url>
     <loc>/tags/blogdown/</loc>
-    <lastmod>2019-08-06T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/git/</loc>
     <lastmod>2019-08-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -187,11 +181,6 @@
     <loc>/tags/regression/</loc>
     <lastmod>2015-07-23T21:13:14-05:00</lastmod>
     <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/post/creating-a-new-theme/</loc>
-    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
