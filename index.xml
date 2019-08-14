@@ -81,6 +81,18 @@ hugo server -D References https://bluestnight.com/guides/midnight/getting-starte
     
     
     <item>
+      <title>Hosting source code and generating static pages in Github</title>
+      <link>/post/blog-integrated-with-blogdown-hugo-rstudio-and-github-seamlessly/</link>
+      <pubDate>Tue, 06 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/blog-integrated-with-blogdown-hugo-rstudio-and-github-seamlessly/</guid>
+      <description> ##
+References </description>
+    </item>
+    
+    
+    
+    <item>
       <title>Prefix bash code with $ using `awk`</title>
       <link>/post/prefix-bash-code-with-using-awk/</link>
       <pubDate>Tue, 06 Aug 2019 00:00:00 +0000</pubDate>
@@ -89,18 +101,6 @@ hugo server -D References https://bluestnight.com/guides/midnight/getting-starte
       <description> Problem We plan to prefix $ before bash code block.
 Solution Use awk in bash line to progress strings.
 # .zshrc alias bashcode=Bashcode function Bashcode(){ history | awk &amp;#39;{print &amp;#34;$ &amp;#34; $2}&amp;#39; } References  http://www.ruanyifeng.com/blog/2018/11/awk.html https://gregable.com/2010/09/why-you-should-know-just-little-awk.html  </description>
-    </item>
-    
-    
-    
-    <item>
-      <title>Hosting source code and generating static pages in Github</title>
-      <link>/post/blog-integrated-with-blogdown-hugo-rstudio-and-github-seamlessly/</link>
-      <pubDate>Tue, 06 Aug 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/blog-integrated-with-blogdown-hugo-rstudio-and-github-seamlessly/</guid>
-      <description> ##
-References </description>
     </item>
     
     
@@ -186,8 +186,6 @@ This document is a brief primer on using Go templates.</description>
 ▾ &amp;lt;root&amp;gt;/ ▾ images/ logo.png  should become
 ▾ &amp;lt;root&amp;gt;/ ▾ static/ ▾ images/ logo.png  Additionally, you&amp;rsquo;ll want any files that should reside at the root (such as CNAME) to be moved to static.</description>
     </item>
-    
-    
     
     
     
