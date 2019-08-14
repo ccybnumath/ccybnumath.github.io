@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>phpstorm on Canyi Chen</title>
+    <link>/tags/phpstorm/</link>
+    <description>Recent content in phpstorm on Canyi Chen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 14 Aug 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/phpstorm/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Phpstorm integrated with XAMPP</title>
+      <link>/post/phpstorm-integrated-with-xampp/</link>
+      <pubDate>Wed, 14 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/phpstorm-integrated-with-xampp/</guid>
+      <description> Install XAMPP   Create project hello   Fix Windows Defender   Configure php  Ctrl+Alt+S prompts settings
+ Integrate with XAMPP   hello.php
+&amp;lt;?php echo &amp;#34;Hello&amp;#34;; ?&amp;gt;   </description>
+    </item>
+    
+  </channel>
+</rss>

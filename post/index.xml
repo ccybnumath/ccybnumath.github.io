@@ -6,10 +6,21 @@
     <description>Recent content in Posts on Canyi Chen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 13 Aug 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 14 Aug 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Phpstorm integrated with XAMPP</title>
+      <link>/post/phpstorm-integrated-with-xampp/</link>
+      <pubDate>Wed, 14 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/phpstorm-integrated-with-xampp/</guid>
+      <description> Install XAMPP   Create project hello   Fix Windows Defender   Configure php  Ctrl+Alt+S prompts settings
+ Integrate with XAMPP   hello.php
+&amp;lt;?php echo &amp;#34;Hello&amp;#34;; ?&amp;gt;   </description>
+    </item>
     
     <item>
       <title>Chapter 10. Accessing MySQL Using PHP</title>
@@ -62,6 +73,24 @@ hugo server -D References https://bluestnight.com/guides/midnight/getting-starte
     </item>
     
     <item>
+      <title>Git basics</title>
+      <link>/post/git-basics/</link>
+      <pubDate>Tue, 06 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/git-basics/</guid>
+      <description>A great and easy understanding introduction to git. Here are just my notes.
+ force pushing
+git push -u origin master -f Create new branch
+git checkout -b src switch branch
+git checkout src Branch src has already existed.
+ show all branches
+git branch show commitment history
+git log git log --graph Display with less
+ Roll back
+# roll back one step git reset --hard HEAD~1 git add .</description>
+    </item>
+    
+    <item>
       <title>Hosting source code and generating static pages in Github</title>
       <link>/post/blog-integrated-with-blogdown-hugo-rstudio-and-github-seamlessly/</link>
       <pubDate>Tue, 06 Aug 2019 00:00:00 +0000</pubDate>
@@ -106,6 +135,16 @@ printenv | less printenv USER set | less echo $USER alias</description>
       <description>R MarkdownThis is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
 You can embed an R code chunk like this:
 summary(cars)## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
+    </item>
+    
+    <item>
+      <title>Creating a New Theme</title>
+      <link>/post/creating-a-new-theme/</link>
+      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>/post/creating-a-new-theme/</guid>
+      <description>Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&amp;rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&amp;rsquo;t cover using CSS to style your theme.
+We&amp;rsquo;ll start with creating a new site with a very basic template.</description>
     </item>
     
     <item>
