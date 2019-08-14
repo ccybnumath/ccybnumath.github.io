@@ -1,3 +1,4 @@
+hugo
 git add .
 git commit -m "autopush from blogpush"
 git push
