@@ -1,13 +1,16 @@
 ---
 title: gohugo & mklink & sed & Typora
 author: chen canyi
-date: 2019-8-14
+date: '2019-08-14'
 categories:
-	- linux
+  - linux
 tags:
-	- sed
-	- mklink
-	- typora
+  - sed
+  - mklink
+  - typora
+slug: gohugo-&-mklink-&-sed-&-Typora
+disable_comments: no
+hide_authorbox: no
 ---
 
 * Hard link in windows

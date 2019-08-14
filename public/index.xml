@@ -23,6 +23,21 @@
     
     
     <item>
+      <title>gohugo &amp; mklink &amp; sed &amp; Typora</title>
+      <link>/post/gohugo-mklink-sed-typora/</link>
+      <pubDate>Wed, 14 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/gohugo-mklink-sed-typora/</guid>
+      <description>Hard link in windows
+mklink /d &amp;#34;C:\Users\chencanyi\Desktop\Typora&amp;#34; &amp;#34;D:\Documents\RStudio\ccybnumath.github.io\content\post&amp;#34; mklink /d &amp;#34;C:\Users\chencanyi\Desktop\Typora\images&amp;#34; &amp;#34;C:\Users\chencanyi\Desktop\Typora\images&amp;#34; Typora
+   sed regular expression  set ![1565787183436](images/2019-8-14-gohugo-&amp;amp;-mklink-&amp;amp;-sed.assets/1565787183436.png) to ![1565787183436](/images/2019-8-14-gohugo-&amp;amp;-mklink-&amp;amp;-sed.assets/1565787183436.png)
+find . -type f -name \*.md | grep -f old.file -v |xargs sed -i &amp;#39;s!(images!(/images!g&amp;#39;  blogupload.sh
+cd ./content/post/ find . -type f -name \*.md | grep -f old.file -v |xargs sed -i &amp;#39;s!(images!(/images!g&amp;#39; cd .. cd .. hugo git add . git commit -m &amp;#34;autopush from blogpush&amp;#34; git push cd public git add .</description>
+    </item>
+    
+    
+    
+    <item>
       <title>Chapter 10. Accessing MySQL Using PHP</title>
       <link>/post/chapter-10-accessing-mysql-using-php/</link>
       <pubDate>Tue, 13 Aug 2019 00:00:00 +0000</pubDate>
@@ -149,6 +164,18 @@ Advisor: Xingwei Tong</description>
     
     
     <item>
+      <title>(Hu)go Template Primer</title>
+      <link>/post/goisforlovers/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>/post/goisforlovers/</guid>
+      <description>Hugo uses the excellent Go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in Go templates.
+This document is a brief primer on using Go templates.</description>
+    </item>
+    
+    
+    
+    <item>
       <title>Getting Started with Hugo</title>
       <link>/post/hugoisforlovers/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
@@ -160,18 +187,6 @@ More complete instructions are available at Install Hugo
 Step 2. Build the Docs Hugo has its own example site which happens to also be the documentation site you are reading right now.
 Follow the following steps:
  Clone the Hugo repository Go into the repo Run hugo in server mode and build the docs Open your browser to http://localhost:1313  Corresponding pseudo commands:</description>
-    </item>
-    
-    
-    
-    <item>
-      <title>(Hu)go Template Primer</title>
-      <link>/post/goisforlovers/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>/post/goisforlovers/</guid>
-      <description>Hugo uses the excellent Go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in Go templates.
-This document is a brief primer on using Go templates.</description>
     </item>
     
     
