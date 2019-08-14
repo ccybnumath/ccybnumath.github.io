@@ -18,16 +18,20 @@ mklink /d "C:\Users\chencanyi\Desktop\Typora\images" "C:\Users\chencanyi\Desktop
 
 * `sed` regular expression
 
-  set `![1565787183436](/images/2019-8-14-gohugo-&-mklink-&-sed.assets/1565787183436.png)` to `![1565787183436](/images/2019-8-14-gohugo-&-mklink-&-sed.assets/1565787183436.png)`
+  set `![1565787183436](images/2019-8-14-gohugo-&-mklink-&-sed.assets/1565787183436.png)` to `![1565787183436](/images/2019-8-14-gohugo-&-mklink-&-sed.assets/1565787183436.png)`
   
   ```bash
-  find ./content/post/ -type f -name \*.md -exec sed -i 's!(/images!(/images!g' {} \;
+  find . -type f -name \*.md | grep -f old.file -v |xargs sed -i 's!(images!(/images!g'
   ```
 
 * blogupload.sh
 
   ```bash
-  find ./content/post/ -type f -name \*.md -exec sed -i 's!(/images!(/images!g' {} \;
+  cd ./content/post/
+  find . -type f -name \*.md | grep -f old.file -v |xargs sed -i 's!(images!(/images!g'
+  cd ..
+  cd ..
+  
   hugo
   git add .
   git commit -m "autopush from blogpush"
@@ -37,6 +41,11 @@ mklink /d "C:\Users\chencanyi\Desktop\Typora\images" "C:\Users\chencanyi\Desktop
   git commit -m "autopush from blogpush"
   git push
   cd ..
+  cd ./content/post/
+  find . -type f -name \*.md > old.file
+  cd ..
+  cd ..
+  
   ```
 
   ## References

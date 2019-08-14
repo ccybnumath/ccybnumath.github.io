@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>gohugo &amp; mklink &amp; sed &amp; Typora</title><meta name="description" itemprop="description" content="Hard link in windows mklink /d &amp;#34;C:\Users\chencanyi\Desktop\Typora&amp;#34; &amp;#34;D:\Documents\RStudio\ccybnumath.github.io\content\post&amp;#34; mklink /d &amp;#34;C:\Users\chencanyi\Desktop\Typora\images&amp;#34; &amp;#34;C:\Users\chencanyi\Desktop\Typora\images&amp;#34; Typora    sed regular expression  set ![1565787183436](/images/2019-8-14-gohugo-&amp;amp;-mklink-&amp;amp;-sed.assets/1565787183436.png) to ![1565787183436](/images/2019-8-14-gohugo-&amp;amp;-mklink-&amp;amp;-sed.assets/1565787183436.png) find ./content/post/ -type f -name \*.md -exec sed -i &amp;#39;s!(/images!(/images!g&amp;#39; {} \;  blogupload.sh find ./content/post/ -type f -name \*.md -exec sed -i &amp;#39;s!(/images!(/images!g&amp;#39; {} \; hugo git add . git commit -m &amp;#34;autopush from blogpush&amp;#34; git push cd public git add . git commit -m &amp;#34;autopush from blogpush&amp;#34; git push cd ." id="desc"><meta name="generator" content="Hugo 0.56.3" /><link rel="canonical" href="/post/2019-8-14-gohugo-mklink-sed/">
+        <title>gohugo &amp; mklink &amp; sed &amp; Typora</title><meta name="description" itemprop="description" content="Hard link in windows mklink /d &amp;#34;C:\Users\chencanyi\Desktop\Typora&amp;#34; &amp;#34;D:\Documents\RStudio\ccybnumath.github.io\content\post&amp;#34; mklink /d &amp;#34;C:\Users\chencanyi\Desktop\Typora\images&amp;#34; &amp;#34;C:\Users\chencanyi\Desktop\Typora\images&amp;#34; Typora    sed regular expression  set ![1565787183436](images/2019-8-14-gohugo-&amp;amp;-mklink-&amp;amp;-sed.assets/1565787183436.png) to ![1565787183436](/images/2019-8-14-gohugo-&amp;amp;-mklink-&amp;amp;-sed.assets/1565787183436.png) find . -type f -name \*.md | grep -f old.file -v |xargs sed -i &amp;#39;s!(images!(/images!g&amp;#39;  blogupload.sh cd ./content/post/ find . -type f -name \*.md | grep -f old.file -v |xargs sed -i &amp;#39;s!(images!(/images!g&amp;#39; cd .. cd .. hugo git add . git commit -m &amp;#34;autopush from blogpush&amp;#34; git push cd public git add ." id="desc"><meta name="generator" content="Hugo 0.56.3" /><link rel="canonical" href="/post/2019-8-14-gohugo-mklink-sed/">
         
 
 <meta name="thumbnail" content="/images/thumbnail.png" /><link rel="dns-prefetch" href="https://use.fontawesome.com/" />
@@ -122,11 +122,15 @@ mklink /d <span class="s2">&#34;C:\Users\chencanyi\Desktop\Typora\images&#34;</s
 <li><code>sed</code> regular expression</li>
 </ul>
 
-<p>set <code>![1565787183436](/images/2019-8-14-gohugo-&amp;-mklink-&amp;-sed.assets/1565787183436.png)</code> to <code>![1565787183436](/images/2019-8-14-gohugo-&amp;-mklink-&amp;-sed.assets/1565787183436.png)</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">  find ./content/post/ -type f -name <span class="se">\*</span>.md -exec sed -i <span class="s1">&#39;s!(/images!(/images!g&#39;</span> <span class="o">{}</span> <span class="se">\;</span></code></pre></div>
+<p>set <code>![1565787183436](images/2019-8-14-gohugo-&amp;-mklink-&amp;-sed.assets/1565787183436.png)</code> to <code>![1565787183436](/images/2019-8-14-gohugo-&amp;-mklink-&amp;-sed.assets/1565787183436.png)</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">  find . -type f -name <span class="se">\*</span>.md <span class="p">|</span> grep -f old.file -v <span class="p">|</span>xargs sed -i <span class="s1">&#39;s!(images!(/images!g&#39;</span></code></pre></div>
 <ul>
 <li><p>blogupload.sh</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">find ./content/post/ -type f -name <span class="se">\*</span>.md -exec sed -i <span class="s1">&#39;s!(/images!(/images!g&#39;</span> <span class="o">{}</span> <span class="se">\;</span>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> ./content/post/
+find . -type f -name <span class="se">\*</span>.md <span class="p">|</span> grep -f old.file -v <span class="p">|</span>xargs sed -i <span class="s1">&#39;s!(images!(/images!g&#39;</span>
+<span class="nb">cd</span> ..
+<span class="nb">cd</span> ..
+  
 hugo
 git add .
 git commit -m <span class="s2">&#34;autopush from blogpush&#34;</span>
@@ -135,7 +139,12 @@ git push
 git add .
 git commit -m <span class="s2">&#34;autopush from blogpush&#34;</span>
 git push
-<span class="nb">cd</span> ..</code></pre></div></li>
+<span class="nb">cd</span> ..
+<span class="nb">cd</span> ./content/post/
+find . -type f -name <span class="se">\*</span>.md &gt; old.file
+<span class="nb">cd</span> ..
+<span class="nb">cd</span> ..
+  </code></pre></div></li>
 </ul>
 
 <p>## References</p>
