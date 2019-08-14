@@ -5,8 +5,21 @@
     <description>Recent content in Home on Canyi Chen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 13 Aug 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 14 Aug 2019 00:00:00 +0000</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Phpstorm integrated with XAMPP</title>
+      <link>/post/phpstorm-integrated-with-xampp/</link>
+      <pubDate>Wed, 14 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/phpstorm-integrated-with-xampp/</guid>
+      <description> Install XAMPP   Create project hello   Fix Windows Defender   Configure php  Ctrl+Alt+S prompts settings
+ Integrate with XAMPP   hello.php
+&amp;lt;?php echo &amp;#34;Hello&amp;#34;; ?&amp;gt;   </description>
+    </item>
+    
     
     
     <item>
@@ -80,6 +93,26 @@ References </description>
     
     
     <item>
+      <title>Git basics</title>
+      <link>/post/git-basics/</link>
+      <pubDate>Tue, 06 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/git-basics/</guid>
+      <description>A great and easy understanding introduction to git. Here are just my notes.
+ force pushing
+git push -u origin master -f Create new branch
+git checkout -b src switch branch
+git checkout src Branch src has already existed.
+ show all branches
+git branch show commitment history
+git log git log --graph Display with less
+ Roll back
+# roll back one step git reset --hard HEAD~1 git add .</description>
+    </item>
+    
+    
+    
+    <item>
       <title>Prefix bash code with $ using `awk`</title>
       <link>/post/prefix-bash-code-with-using-awk/</link>
       <pubDate>Tue, 06 Aug 2019 00:00:00 +0000</pubDate>
@@ -123,6 +156,18 @@ summary(cars)## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 2
     
     
     <item>
+      <title>Creating a New Theme</title>
+      <link>/post/creating-a-new-theme/</link>
+      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>/post/creating-a-new-theme/</guid>
+      <description>Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&amp;rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&amp;rsquo;t cover using CSS to style your theme.
+We&amp;rsquo;ll start with creating a new site with a very basic template.</description>
+    </item>
+    
+    
+    
+    <item>
       <title>About</title>
       <link>/about/</link>
       <pubDate>Wed, 09 Apr 2014 00:00:00 +0000</pubDate>
@@ -131,6 +176,18 @@ summary(cars)## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 2
       <description>Canyi Chen | 陈灿贻 I am Canyi Chen, a doctor candidate in Renmin University of China majored in Statistics.
 Education  Ph.D. Statistics, Renmin University of China B.S. in Mathematics, Beijing Normal University, 2014–2018  Thesis:
 Advisor: Xingwei Tong</description>
+    </item>
+    
+    
+    
+    <item>
+      <title>(Hu)go Template Primer</title>
+      <link>/post/goisforlovers/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>/post/goisforlovers/</guid>
+      <description>Hugo uses the excellent Go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in Go templates.
+This document is a brief primer on using Go templates.</description>
     </item>
     
     
@@ -147,18 +204,6 @@ More complete instructions are available at Install Hugo
 Step 2. Build the Docs Hugo has its own example site which happens to also be the documentation site you are reading right now.
 Follow the following steps:
  Clone the Hugo repository Go into the repo Run hugo in server mode and build the docs Open your browser to http://localhost:1313  Corresponding pseudo commands:</description>
-    </item>
-    
-    
-    
-    <item>
-      <title>(Hu)go Template Primer</title>
-      <link>/post/goisforlovers/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>/post/goisforlovers/</guid>
-      <description>Hugo uses the excellent Go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in Go templates.
-This document is a brief primer on using Go templates.</description>
     </item>
     
     
