@@ -8,7 +8,7 @@ categories:
 tags:
   - php
   - mysql
-disable_comments: yes
+disable_comments: no
 hide_authorbox: no
 ---
 

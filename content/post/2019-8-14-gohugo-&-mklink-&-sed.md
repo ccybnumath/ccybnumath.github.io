@@ -2,6 +2,12 @@
 title: gohugo & mklink & sed & Typora
 author: chen canyi
 date: 2019-8-14
+categories:
+	- linux
+tags:
+	- sed
+	- mklink
+	- typora
 ---
 
 * Hard link in windows
@@ -51,5 +57,11 @@ mklink /d "C:\Users\chencanyi\Desktop\Typora\images" "C:\Users\chencanyi\Desktop
   ## References
 
 * (mklink /d hard link)[https://www.cnblogs.com/gx018/p/gx002.html]
+
 * (`sed`)[https://blog.csdn.net/qq_37373203/article/details/86020048]
+
 * (https://www.everythingcli.org/find-exec-vs-find-xargs/)[https://www.everythingcli.org/find-exec-vs-find-xargs/]
+
+* (https://www.runoob.com/linux/linux-comm-xargs.html)[https://www.runoob.com/linux/linux-comm-xargs.html]
+
+* (Find command excluding directories and some files)[https://www.unix.com/shell-programming-and-scripting/270798-find-command-excluding-directories-some-files.html]

@@ -154,18 +154,5 @@ Follow the following steps:
 ▾ &amp;lt;root&amp;gt;/ ▾ static/ ▾ images/ logo.png  Additionally, you&amp;rsquo;ll want any files that should reside at the root (such as CNAME) to be moved to static.</description>
     </item>
     
-    <item>
-      <title>gohugo &amp; mklink &amp; sed &amp; Typora</title>
-      <link>/post/2019-8-14-gohugo-mklink-sed/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/post/2019-8-14-gohugo-mklink-sed/</guid>
-      <description>Hard link in windows
-mklink /d &amp;#34;C:\Users\chencanyi\Desktop\Typora&amp;#34; &amp;#34;D:\Documents\RStudio\ccybnumath.github.io\content\post&amp;#34; mklink /d &amp;#34;C:\Users\chencanyi\Desktop\Typora\images&amp;#34; &amp;#34;C:\Users\chencanyi\Desktop\Typora\images&amp;#34; Typora
-   sed regular expression  set ![1565787183436](images/2019-8-14-gohugo-&amp;amp;-mklink-&amp;amp;-sed.assets/1565787183436.png) to ![1565787183436](/images/2019-8-14-gohugo-&amp;amp;-mklink-&amp;amp;-sed.assets/1565787183436.png)
-find . -type f -name \*.md | grep -f old.file -v |xargs sed -i &amp;#39;s!(images!(/images!g&amp;#39;  blogupload.sh
-cd ./content/post/ find . -type f -name \*.md | grep -f old.file -v |xargs sed -i &amp;#39;s!(images!(/images!g&amp;#39; cd .. cd .. hugo git add . git commit -m &amp;#34;autopush from blogpush&amp;#34; git push cd public git add .</description>
-    </item>
-    
   </channel>
 </rss>
