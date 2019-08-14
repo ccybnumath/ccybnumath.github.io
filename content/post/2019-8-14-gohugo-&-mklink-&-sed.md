@@ -18,16 +18,16 @@ mklink /d "C:\Users\chencanyi\Desktop\Typora\images" "C:\Users\chencanyi\Desktop
 
 * `sed` regular expression
 
-  set `![1565787183436](images/2019-8-14-gohugo-&-mklink-&-sed.assets/1565787183436.png)` to `![1565787183436](/images/2019-8-14-gohugo-&-mklink-&-sed.assets/1565787183436.png)`
+  set `![1565787183436](/images/2019-8-14-gohugo-&-mklink-&-sed.assets/1565787183436.png)` to `![1565787183436](/images/2019-8-14-gohugo-&-mklink-&-sed.assets/1565787183436.png)`
   
   ```bash
-  find ./content/post/ -type f -name \*.md -exec sed -i 's!(images!(/images!g' {} \;
+  find ./content/post/ -type f -name \*.md -exec sed -i 's!(/images!(/images!g' {} \;
   ```
 
 * blogupload.sh
 
   ```bash
-  find ./content/post/ -type f -name \*.md -exec sed -i 's!(images!(/images!g' {} \;
+  find ./content/post/ -type f -name \*.md -exec sed -i 's!(/images!(/images!g' {} \;
   hugo
   git add .
   git commit -m "autopush from blogpush"

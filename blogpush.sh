@@ -1,5 +1,5 @@
 cd ./content/post/
-find . -type f -name \*.md | grep -f old.file -v -exec sed -i 's!(images!(/images!g' {} \;
+find . -type f -name \*.md | grep -f old.file -v |xargs sed -i 's!(images!(/images!g'
 cd ..
 cd ..
 
