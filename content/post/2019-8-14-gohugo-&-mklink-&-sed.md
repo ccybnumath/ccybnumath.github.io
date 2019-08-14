@@ -57,14 +57,15 @@ mklink /d "C:\Users\chencanyi\Desktop\Typora\images" "C:\Users\chencanyi\Desktop
   
   ```
 
-  ## References
 
-* (mklink /d hard link)[https://www.cnblogs.com/gx018/p/gx002.html]
+## References
 
-* (`sed`)[https://blog.csdn.net/qq_37373203/article/details/86020048]
+* [mklink /d hard link](https://www.cnblogs.com/gx018/p/gx002.html)
 
-* (https://www.everythingcli.org/find-exec-vs-find-xargs/)[https://www.everythingcli.org/find-exec-vs-find-xargs/]
+* [`sed`](https://blog.csdn.net/qq_37373203/article/details/86020048)
 
-* (https://www.runoob.com/linux/linux-comm-xargs.html)[https://www.runoob.com/linux/linux-comm-xargs.html]
+* [https://www.everythingcli.org/find-exec-vs-find-xargs/](https://www.everythingcli.org/find-exec-vs-find-xargs/)
 
-* (Find command excluding directories and some files)[https://www.unix.com/shell-programming-and-scripting/270798-find-command-excluding-directories-some-files.html]
+* [https://www.runoob.com/linux/linux-comm-xargs.html](https://www.runoob.com/linux/linux-comm-xargs.html)
+
+* [Find command excluding directories and some files](https://www.unix.com/shell-programming-and-scripting/270798-find-command-excluding-directories-some-files.html)
