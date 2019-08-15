@@ -11,6 +11,7 @@ tags:
 slug: gohugo-&-mklink-&-sed-&-Typora
 disable_comments: no
 hide_authorbox: no
+typora-root-url: /
 ---
 
 * Hard link in windows
