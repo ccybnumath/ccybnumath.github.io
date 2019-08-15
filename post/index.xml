@@ -167,5 +167,15 @@ Follow the following steps:
 ▾ &amp;lt;root&amp;gt;/ ▾ static/ ▾ images/ logo.png  Additionally, you&amp;rsquo;ll want any files that should reside at the root (such as CNAME) to be moved to static.</description>
     </item>
     
+    <item>
+      <title>Chapter 11. Form Handling</title>
+      <link>/post/chapter-11.-form-handling/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/post/chapter-11.-form-handling/</guid>
+      <description>Input Types Text boxes &amp;lt;input type=&amp;#34;text&amp;#34; name=&amp;#34;name&amp;#34; size=&amp;#34;size&amp;#34; maxlength=&amp;#34;length&amp;#34; value=&amp;#34;value&amp;#34;&amp;gt; Text areas &amp;lt;textarea name=&amp;#39;name&amp;#39; cols=&amp;#39;width&amp;#39; rows=&amp;#39;height&amp;#39; wrap=&amp;#39;type&amp;#39;&amp;gt; This is some default text. &amp;lt;/textarea&amp;gt; Both use the character spacing of the current font to determine the size of the area.
+Checkboxes &amp;lt;input type=&amp;#39;checkbox&amp;#39; name=&amp;#39;name&amp;#39; value=&amp;#39;value&amp;#39; checked=&amp;#39;checked&amp;#39;&amp;gt; The string you assign to the attribute should be either a pair of double or single quotes or the value &amp;ldquo;checked&amp;rdquo;, or there should be no value assigned (just checked).</description>
+    </item>
+    
   </channel>
 </rss>
